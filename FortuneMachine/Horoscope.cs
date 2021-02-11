@@ -11,7 +11,7 @@ namespace FortuneMachine
     public static class Horoscope
     {
 
-        private static string url = "https://www.asiaflash.com/horoscope/rss_horojour_@SYMBOL@.xml";
+        private static string templateQuery = "https://www.asiaflash.com/horoscope/rss_horojour_@SYMBOL@.xml";
 
         public static string SelectSymbol()
         {
@@ -31,10 +31,10 @@ namespace FortuneMachine
 
         private static string GetRSSNodeDescription()
         {
-            string realURL = url.Replace("@SYMBOL@", SelectSymbol());
-            Console.WriteLine(realURL);
+            string url = templateQuery.Replace("@SYMBOL@", SelectSymbol());
+            Console.WriteLine("Requête : " + url);
             XmlDocument rssXmlDoc = new XmlDocument();
-            rssXmlDoc.Load(realURL);
+            rssXmlDoc.Load(url);
             XmlNode rssNode = rssXmlDoc.SelectSingleNode("rss/channel/item/description");
             return rssNode.InnerText;
         }
@@ -42,74 +42,103 @@ namespace FortuneMachine
         
         public static string GetLovePrediction()
         {
-            string lovePrediction = "_";
-            string description = GetRSSNodeDescription();
-            string[] sections = description.Split(new String[] { "<br><br>" }, StringSplitOptions.None);
-            foreach (string section in sections)
+            try
             {
-                string[] parts = section.Split(new String[] { "</b><br>" }, StringSplitOptions.None);
-                if (parts.Length < 2)
-                    continue;
-                string partTitle = parts[0];
-                string partText = parts[1];
-                if (partTitle.Contains("Amour"))
-                    lovePrediction = partText;
+                string lovePrediction = "_";
+                string description = GetRSSNodeDescription();
+                string[] sections = description.Split(new String[] { "<br><br>" }, StringSplitOptions.None);
+                foreach (string section in sections)
+                {
+                    string[] parts = section.Split(new String[] { "</b><br>" }, StringSplitOptions.None);
+                    if (parts.Length < 2)
+                        continue;
+                    string partTitle = parts[0];
+                    string partText = parts[1];
+                    if (partTitle.Contains("Amour"))
+                        lovePrediction = partText;
+                }
+                return "ok_" + lovePrediction;
             }
-            return lovePrediction;
+            catch (Exception ex)
+            {
+                return "error_" + ex.Message;
+            }
+
         }
 
         public static string GetMoneyPrediction()
         {
-            string moneyPrediction = "_";
-            string description = GetRSSNodeDescription();
-            string[] sections = description.Split(new String[] { "<br><br>" }, StringSplitOptions.None);
-            foreach (string section in sections)
-            {
-                string[] parts = section.Split(new String[] { "</b><br>" }, StringSplitOptions.None);
-                if (parts.Length < 2)
-                    continue;
-                string partTitle = parts[0];
-                string partText = parts[1];
-                if (partTitle.Contains("Argent"))
-                    moneyPrediction = partText;
+            try
+            { 
+                string moneyPrediction = "_";
+                string description = GetRSSNodeDescription();
+                string[] sections = description.Split(new String[] { "<br><br>" }, StringSplitOptions.None);
+                foreach (string section in sections)
+                {
+                    string[] parts = section.Split(new String[] { "</b><br>" }, StringSplitOptions.None);
+                    if (parts.Length < 2)
+                        continue;
+                    string partTitle = parts[0];
+                    string partText = parts[1];
+                    if (partTitle.Contains("Argent"))
+                        moneyPrediction = partText;
+                }
+                return "ok_" + moneyPrediction;
             }
-            return moneyPrediction;
+            catch (Exception ex)
+            {
+                return "error_" + ex.Message;
+            }
         }
 
         public static string GetWorkPrediction()
         {
-            string workPrediction = "_";
-            string description = GetRSSNodeDescription();
-            string[] sections = description.Split(new String[] { "<br><br>" }, StringSplitOptions.None);
-            foreach (string section in sections)
+            try
+            { 
+                string workPrediction = "_";
+                string description = GetRSSNodeDescription();
+                string[] sections = description.Split(new String[] { "<br><br>" }, StringSplitOptions.None);
+                foreach (string section in sections)
+                {
+                    string[] parts = section.Split(new String[] { "</b><br>" }, StringSplitOptions.None);
+                    if (parts.Length < 2)
+                        continue;
+                    string partTitle = parts[0];
+                    string partText = parts[1];
+                    if (partTitle.Contains("Travail"))
+                        workPrediction = partText;
+                }
+                return "ok_" + workPrediction;
+                }
+            catch (Exception ex)
             {
-                string[] parts = section.Split(new String[] { "</b><br>" }, StringSplitOptions.None);
-                if (parts.Length < 2)
-                    continue;
-                string partTitle = parts[0];
-                string partText = parts[1];
-                if (partTitle.Contains("Travail"))
-                    workPrediction = partText;
+                return "error_" + ex.Message;
             }
-            return workPrediction;
         }
 
         public static string GetWinkPrediction()
         {
-            string winkPrediction = "_";
-            string description = GetRSSNodeDescription();
-            string[] sections = description.Split(new String[] { "<br><br>" }, StringSplitOptions.None);
-            foreach (string section in sections)
-            {
-                string[] parts = section.Split(new String[] { "</b><br>" }, StringSplitOptions.None);
-                if (parts.Length < 2)
-                    continue;
-                string partTitle = parts[0];
-                string partText = parts[1];
-                if (partTitle.Contains("Clin d'oeil"))
-                    winkPrediction = partText;
+            try
+            { 
+                string winkPrediction = "_";
+                string description = GetRSSNodeDescription();
+                string[] sections = description.Split(new String[] { "<br><br>" }, StringSplitOptions.None);
+                foreach (string section in sections)
+                {
+                    string[] parts = section.Split(new String[] { "</b><br>" }, StringSplitOptions.None);
+                    if (parts.Length < 2)
+                        continue;
+                    string partTitle = parts[0];
+                    string partText = parts[1];
+                    if (partTitle.Contains("Clin d'oeil"))
+                        winkPrediction = partText;
+                }
+                return "ok_" + winkPrediction;
             }
-            return winkPrediction;
+            catch (Exception ex)
+            {
+                return "error_" + ex.Message;
+            }
         }
     }
 }

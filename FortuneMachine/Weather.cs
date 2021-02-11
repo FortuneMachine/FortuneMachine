@@ -1,24 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Device;
-using System.Device.Location;
+using System.Configuration;
 using System.Net;
+using System.Windows.Forms;
 using Newtonsoft.Json;
 
 namespace FortuneMachine
 {
     static class Weather
     {
-
         private static string APIKey = "48b4c911b4eb888cc5f3b6c7f4484777";
-        private static string basicQuery = "https://api.openweathermap.org/data/2.5/onecall?lat=@LAT@&lon=@LON@&exclude=current,minutely,hourly,alerts&units=metric&lang=fr&appid=" + APIKey;
+        private static string templateQuery = "https://api.openweathermap.org/data/2.5/onecall?lat=@LAT@&lon=@LON@&exclude=current,minutely,hourly,alerts&units=metric&lang=fr&appid=";
 
-        private static string GetData(double latitude, double longitude)
+        private static void LoadAPIKey()
         {
-            string url = basicQuery.Replace("@LAT@", latitude.ToString());
+            if (ConfigurationManager.AppSettings.Get("WeatherAPIKey") != null)
+                APIKey = ConfigurationManager.AppSettings.Get("WeatherAPIKey");
+            else
+                MessageBox.Show("Erreur lors de la récupération de la clé API, celle par défaut sera utilisée (Vérifier le fichier de configuration)", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private static string GetRawData(double latitude, double longitude)
+        {
+            string url = templateQuery + APIKey;
+            url = url.Replace("@LAT@", latitude.ToString());
             url = url.Replace("@LON@", longitude.ToString());
             string result;
             using (WebClient client = new WebClient())
@@ -27,16 +31,16 @@ namespace FortuneMachine
                 try
                 {
                     client.Encoding = System.Text.Encoding.UTF8;
-                    Console.WriteLine("Lien : " + url);
-                    result = (client.DownloadString(url));
+                    Console.WriteLine("Requête : " + url);
+                    result = client.DownloadString(url);
                 }
                 catch (WebException ex)
                 {
-                    result = "Error : " + ex.Message;
+                    result = "Error_" + ex.Message;
                 }
                 catch (Exception ex)
                 {
-                    result = "Unknown error : " + ex.Message;
+                    result = "Unknown error_" + ex.Message;
                 }
                 return result;
             }
@@ -50,34 +54,45 @@ namespace FortuneMachine
             return dtDateTime;
         }
 
-        public static string GetMeteoPrediction(double latitude, double longitude)
+        public static string GetWeatherForecast(double latitude, double longitude)
         {
-            string dataReceived = GetData(latitude, longitude);
+            LoadAPIKey();
+            string meteoForecast = "";
+
+            string dataReceived = GetRawData(latitude, longitude);
             if (dataReceived.ToLower().Contains("error"))
             {
                 return dataReceived;
             }
 
-            dynamic stuff = JsonConvert.DeserializeObject(dataReceived);
-            dynamic daily = stuff.daily;
+            dynamic json = JsonConvert.DeserializeObject(dataReceived);
+            dynamic dailyNode = json.daily;
             string averageTemp = "";
             string weather = "";
-            string formatedText = "";
-            foreach (var day in daily)
-            {
-                double dt = Convert.ToDouble(day.dt);
-                DateTime currDate = UnixTimeStampToDateTime(dt);
-                averageTemp = day.temp.day;
-                //minTemp = day.temp.min;
-                //maxTemp = day.temp.max;
-                weather = day.weather[0].description;
 
-                formatedText += currDate.ToShortDateString() + "\n";
-                formatedText += "Température moyenne : " + averageTemp + "°C\n";
-                // Put the first character in uppercase
-                formatedText += char.ToUpper(weather[0]) + weather.Substring(1) + "\n\n";
+            try
+            {
+                foreach (var day in dailyNode)
+                {
+                    double dt = Convert.ToDouble(day.dt);
+                    DateTime currDate = UnixTimeStampToDateTime(dt);
+                    averageTemp = day.temp.day;
+                    //minTemp = day.temp.min;
+                    //maxTemp = day.temp.max;
+                    weather = day.weather[0].description;
+
+                    meteoForecast += currDate.ToShortDateString() + "\n";
+                    meteoForecast += "Température moyenne : " + averageTemp + "°C\n";
+                    // Put the first character in uppercase
+                    meteoForecast += char.ToUpper(weather[0]) + weather.Substring(1) + "\n\n";
+                }
+                return "ok_" + meteoForecast;
             }
-            return formatedText;
+            catch (Exception ex)
+            {
+                return "error_" + ex.Message;
+            }
+
         }
     }
 }

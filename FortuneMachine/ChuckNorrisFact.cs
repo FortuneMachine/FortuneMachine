@@ -10,12 +10,12 @@ namespace FortuneMachine
 {
     static class ChuckNorrisFact
     {
-        private static string _basicURL = "http://api.icndb.com/jokes/random";
-        private static Boolean _explicit = true;
+        private static string templateQuery = "http://api.icndb.com/jokes/random";
+        private static Boolean explicitContent = true;
 
-        public static string GetOneJoke()
+        public static string GetRawData()
         {
-            string joke = "";
+            string result = "";
             string url = "";
             using (WebClient client = new WebClient())
             {
@@ -23,35 +23,52 @@ namespace FortuneMachine
                 try
                 {
                     client.Encoding = System.Text.Encoding.UTF8;
-                    if (_explicit == true)
-                        url = _basicURL;
+                    if (explicitContent == true)
+                        url = templateQuery;
                     else
-                        url = _basicURL + "?exclude=[explicit]";
-                    joke = ParseAnswer(client.DownloadString(url));
+                        url = templateQuery + "?exclude=[explicit]";
+                    Console.WriteLine("Requête : " + url);
+                    result = client.DownloadString(url);
                 }
                 catch (WebException ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    result = "Error_" + ex.Message;
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    result = "Unknown error_" + ex.Message;
                 }
+                return result;
             }
-            Console.WriteLine(joke);
-            return joke;
         }
 
-        private static string ParseAnswer(string json)
+        public static string GetJoke()
         {
-            dynamic stuff = JsonConvert.DeserializeObject(json);
-            dynamic joke = stuff.value.joke;
-            return joke;
+            string joke = "";
+
+            string dataReceived = GetRawData();
+            if (dataReceived.ToLower().Contains("error"))
+            {
+                return dataReceived;
+            }
+
+            try
+            {
+                dynamic json = JsonConvert.DeserializeObject(dataReceived);
+                joke = json.value.joke;
+                return "ok_" + joke;
+            }
+            catch (Exception ex)
+            {
+                return "error_" + ex.Message;
+            }
+
         }
 
+        // TODO : Mettre en paramètre
         public static void EnableExplicit(bool enable)
         {
-            _explicit = enable;
+            explicitContent = enable;
         }
     }
 }

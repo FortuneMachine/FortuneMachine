@@ -31,15 +31,15 @@ namespace FortuneMachine
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectionForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonCancer = new System.Windows.Forms.Button();
-            this.buttonLion = new System.Windows.Forms.Button();
-            this.buttonVierge = new System.Windows.Forms.Button();
-            this.buttonBalance = new System.Windows.Forms.Button();
-            this.buttonScorpion = new System.Windows.Forms.Button();
-            this.buttonSagittaire = new System.Windows.Forms.Button();
-            this.buttonCapricorne = new System.Windows.Forms.Button();
-            this.buttonVerseau = new System.Windows.Forms.Button();
             this.buttonPoisson = new System.Windows.Forms.Button();
+            this.buttonVerseau = new System.Windows.Forms.Button();
+            this.buttonCapricorne = new System.Windows.Forms.Button();
+            this.buttonSagittaire = new System.Windows.Forms.Button();
+            this.buttonScorpion = new System.Windows.Forms.Button();
+            this.buttonBalance = new System.Windows.Forms.Button();
+            this.buttonVierge = new System.Windows.Forms.Button();
+            this.buttonLion = new System.Windows.Forms.Button();
+            this.buttonCancer = new System.Windows.Forms.Button();
             this.buttonGemeaux = new System.Windows.Forms.Button();
             this.buttonTaureau = new System.Windows.Forms.Button();
             this.buttonBelier = new System.Windows.Forms.Button();
@@ -73,125 +73,125 @@ namespace FortuneMachine
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(684, 341);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // buttonCancer
-            // 
-            this.buttonCancer.BackgroundImage = global::FortuneMachine.Properties.Resources.Cancer;
-            this.buttonCancer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonCancer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonCancer.Location = new System.Drawing.Point(402, 3);
-            this.buttonCancer.Name = "buttonCancer";
-            this.buttonCancer.Size = new System.Drawing.Size(127, 219);
-            this.buttonCancer.TabIndex = 3;
-            this.buttonCancer.UseVisualStyleBackColor = true;
-            this.buttonCancer.Click += new System.EventHandler(this.buttonCancer_Click);
-            // 
-            // buttonLion
-            // 
-            this.buttonLion.BackgroundImage = global::FortuneMachine.Properties.Resources.Lion;
-            this.buttonLion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonLion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonLion.Location = new System.Drawing.Point(535, 3);
-            this.buttonLion.Name = "buttonLion";
-            this.buttonLion.Size = new System.Drawing.Size(127, 219);
-            this.buttonLion.TabIndex = 4;
-            this.buttonLion.UseVisualStyleBackColor = true;
-            this.buttonLion.Click += new System.EventHandler(this.buttonLion_Click);
-            // 
-            // buttonVierge
-            // 
-            this.buttonVierge.BackgroundImage = global::FortuneMachine.Properties.Resources.Vierge;
-            this.buttonVierge.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonVierge.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonVierge.Location = new System.Drawing.Point(668, 3);
-            this.buttonVierge.Name = "buttonVierge";
-            this.buttonVierge.Size = new System.Drawing.Size(129, 219);
-            this.buttonVierge.TabIndex = 5;
-            this.buttonVierge.UseVisualStyleBackColor = true;
-            this.buttonVierge.Click += new System.EventHandler(this.buttonVierge_Click);
-            // 
-            // buttonBalance
-            // 
-            this.buttonBalance.BackgroundImage = global::FortuneMachine.Properties.Resources.Balance;
-            this.buttonBalance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonBalance.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonBalance.Location = new System.Drawing.Point(3, 228);
-            this.buttonBalance.Name = "buttonBalance";
-            this.buttonBalance.Size = new System.Drawing.Size(127, 219);
-            this.buttonBalance.TabIndex = 6;
-            this.buttonBalance.UseVisualStyleBackColor = true;
-            this.buttonBalance.Click += new System.EventHandler(this.buttonBalance_Click);
-            // 
-            // buttonScorpion
-            // 
-            this.buttonScorpion.BackgroundImage = global::FortuneMachine.Properties.Resources.Scorpion;
-            this.buttonScorpion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonScorpion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonScorpion.Location = new System.Drawing.Point(136, 228);
-            this.buttonScorpion.Name = "buttonScorpion";
-            this.buttonScorpion.Size = new System.Drawing.Size(127, 219);
-            this.buttonScorpion.TabIndex = 7;
-            this.buttonScorpion.UseVisualStyleBackColor = true;
-            this.buttonScorpion.Click += new System.EventHandler(this.buttonScorpion_Click);
-            // 
-            // buttonSagittaire
-            // 
-            this.buttonSagittaire.BackgroundImage = global::FortuneMachine.Properties.Resources.Sagittaire;
-            this.buttonSagittaire.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonSagittaire.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSagittaire.Location = new System.Drawing.Point(269, 228);
-            this.buttonSagittaire.Name = "buttonSagittaire";
-            this.buttonSagittaire.Size = new System.Drawing.Size(127, 219);
-            this.buttonSagittaire.TabIndex = 8;
-            this.buttonSagittaire.UseVisualStyleBackColor = true;
-            this.buttonSagittaire.Click += new System.EventHandler(this.buttonSagittaire_Click);
-            // 
-            // buttonCapricorne
-            // 
-            this.buttonCapricorne.BackgroundImage = global::FortuneMachine.Properties.Resources.Capricorne;
-            this.buttonCapricorne.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonCapricorne.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonCapricorne.Location = new System.Drawing.Point(402, 228);
-            this.buttonCapricorne.Name = "buttonCapricorne";
-            this.buttonCapricorne.Size = new System.Drawing.Size(127, 219);
-            this.buttonCapricorne.TabIndex = 9;
-            this.buttonCapricorne.UseVisualStyleBackColor = true;
-            this.buttonCapricorne.Click += new System.EventHandler(this.buttonCapricorne_Click);
-            // 
-            // buttonVerseau
-            // 
-            this.buttonVerseau.BackgroundImage = global::FortuneMachine.Properties.Resources.Verseau;
-            this.buttonVerseau.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonVerseau.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonVerseau.Location = new System.Drawing.Point(535, 228);
-            this.buttonVerseau.Name = "buttonVerseau";
-            this.buttonVerseau.Size = new System.Drawing.Size(127, 219);
-            this.buttonVerseau.TabIndex = 10;
-            this.buttonVerseau.UseVisualStyleBackColor = true;
-            this.buttonVerseau.Click += new System.EventHandler(this.buttonVerseau_Click);
             // 
             // buttonPoisson
             // 
             this.buttonPoisson.BackgroundImage = global::FortuneMachine.Properties.Resources.Poisson;
             this.buttonPoisson.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonPoisson.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonPoisson.Location = new System.Drawing.Point(668, 228);
+            this.buttonPoisson.Location = new System.Drawing.Point(568, 173);
             this.buttonPoisson.Name = "buttonPoisson";
-            this.buttonPoisson.Size = new System.Drawing.Size(129, 219);
+            this.buttonPoisson.Size = new System.Drawing.Size(113, 165);
             this.buttonPoisson.TabIndex = 11;
             this.buttonPoisson.UseVisualStyleBackColor = true;
             this.buttonPoisson.Click += new System.EventHandler(this.buttonPoisson_Click);
+            // 
+            // buttonVerseau
+            // 
+            this.buttonVerseau.BackgroundImage = global::FortuneMachine.Properties.Resources.Verseau;
+            this.buttonVerseau.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonVerseau.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonVerseau.Location = new System.Drawing.Point(455, 173);
+            this.buttonVerseau.Name = "buttonVerseau";
+            this.buttonVerseau.Size = new System.Drawing.Size(107, 165);
+            this.buttonVerseau.TabIndex = 10;
+            this.buttonVerseau.UseVisualStyleBackColor = true;
+            this.buttonVerseau.Click += new System.EventHandler(this.buttonVerseau_Click);
+            // 
+            // buttonCapricorne
+            // 
+            this.buttonCapricorne.BackgroundImage = global::FortuneMachine.Properties.Resources.Capricorne;
+            this.buttonCapricorne.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonCapricorne.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonCapricorne.Location = new System.Drawing.Point(342, 173);
+            this.buttonCapricorne.Name = "buttonCapricorne";
+            this.buttonCapricorne.Size = new System.Drawing.Size(107, 165);
+            this.buttonCapricorne.TabIndex = 9;
+            this.buttonCapricorne.UseVisualStyleBackColor = true;
+            this.buttonCapricorne.Click += new System.EventHandler(this.buttonCapricorne_Click);
+            // 
+            // buttonSagittaire
+            // 
+            this.buttonSagittaire.BackgroundImage = global::FortuneMachine.Properties.Resources.Sagittaire;
+            this.buttonSagittaire.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonSagittaire.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSagittaire.Location = new System.Drawing.Point(229, 173);
+            this.buttonSagittaire.Name = "buttonSagittaire";
+            this.buttonSagittaire.Size = new System.Drawing.Size(107, 165);
+            this.buttonSagittaire.TabIndex = 8;
+            this.buttonSagittaire.UseVisualStyleBackColor = true;
+            this.buttonSagittaire.Click += new System.EventHandler(this.buttonSagittaire_Click);
+            // 
+            // buttonScorpion
+            // 
+            this.buttonScorpion.BackgroundImage = global::FortuneMachine.Properties.Resources.Scorpion;
+            this.buttonScorpion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonScorpion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonScorpion.Location = new System.Drawing.Point(116, 173);
+            this.buttonScorpion.Name = "buttonScorpion";
+            this.buttonScorpion.Size = new System.Drawing.Size(107, 165);
+            this.buttonScorpion.TabIndex = 7;
+            this.buttonScorpion.UseVisualStyleBackColor = true;
+            this.buttonScorpion.Click += new System.EventHandler(this.buttonScorpion_Click);
+            // 
+            // buttonBalance
+            // 
+            this.buttonBalance.BackgroundImage = global::FortuneMachine.Properties.Resources.Balance;
+            this.buttonBalance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonBalance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonBalance.Location = new System.Drawing.Point(3, 173);
+            this.buttonBalance.Name = "buttonBalance";
+            this.buttonBalance.Size = new System.Drawing.Size(107, 165);
+            this.buttonBalance.TabIndex = 6;
+            this.buttonBalance.UseVisualStyleBackColor = true;
+            this.buttonBalance.Click += new System.EventHandler(this.buttonBalance_Click);
+            // 
+            // buttonVierge
+            // 
+            this.buttonVierge.BackgroundImage = global::FortuneMachine.Properties.Resources.Vierge;
+            this.buttonVierge.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonVierge.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonVierge.Location = new System.Drawing.Point(568, 3);
+            this.buttonVierge.Name = "buttonVierge";
+            this.buttonVierge.Size = new System.Drawing.Size(113, 164);
+            this.buttonVierge.TabIndex = 5;
+            this.buttonVierge.UseVisualStyleBackColor = true;
+            this.buttonVierge.Click += new System.EventHandler(this.buttonVierge_Click);
+            // 
+            // buttonLion
+            // 
+            this.buttonLion.BackgroundImage = global::FortuneMachine.Properties.Resources.Lion;
+            this.buttonLion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonLion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonLion.Location = new System.Drawing.Point(455, 3);
+            this.buttonLion.Name = "buttonLion";
+            this.buttonLion.Size = new System.Drawing.Size(107, 164);
+            this.buttonLion.TabIndex = 4;
+            this.buttonLion.UseVisualStyleBackColor = true;
+            this.buttonLion.Click += new System.EventHandler(this.buttonLion_Click);
+            // 
+            // buttonCancer
+            // 
+            this.buttonCancer.BackgroundImage = global::FortuneMachine.Properties.Resources.Cancer;
+            this.buttonCancer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonCancer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonCancer.Location = new System.Drawing.Point(342, 3);
+            this.buttonCancer.Name = "buttonCancer";
+            this.buttonCancer.Size = new System.Drawing.Size(107, 164);
+            this.buttonCancer.TabIndex = 3;
+            this.buttonCancer.UseVisualStyleBackColor = true;
+            this.buttonCancer.Click += new System.EventHandler(this.buttonCancer_Click);
             // 
             // buttonGemeaux
             // 
             this.buttonGemeaux.BackgroundImage = global::FortuneMachine.Properties.Resources.Gemeaux;
             this.buttonGemeaux.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonGemeaux.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonGemeaux.Location = new System.Drawing.Point(269, 3);
+            this.buttonGemeaux.Location = new System.Drawing.Point(229, 3);
             this.buttonGemeaux.Name = "buttonGemeaux";
-            this.buttonGemeaux.Size = new System.Drawing.Size(127, 219);
+            this.buttonGemeaux.Size = new System.Drawing.Size(107, 164);
             this.buttonGemeaux.TabIndex = 2;
             this.buttonGemeaux.UseVisualStyleBackColor = true;
             this.buttonGemeaux.Click += new System.EventHandler(this.buttonGemeaux_Click);
@@ -201,9 +201,9 @@ namespace FortuneMachine
             this.buttonTaureau.BackgroundImage = global::FortuneMachine.Properties.Resources.Taureau;
             this.buttonTaureau.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonTaureau.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonTaureau.Location = new System.Drawing.Point(136, 3);
+            this.buttonTaureau.Location = new System.Drawing.Point(116, 3);
             this.buttonTaureau.Name = "buttonTaureau";
-            this.buttonTaureau.Size = new System.Drawing.Size(127, 219);
+            this.buttonTaureau.Size = new System.Drawing.Size(107, 164);
             this.buttonTaureau.TabIndex = 1;
             this.buttonTaureau.UseVisualStyleBackColor = true;
             this.buttonTaureau.Click += new System.EventHandler(this.buttonTaureau_Click);
@@ -215,7 +215,7 @@ namespace FortuneMachine
             this.buttonBelier.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonBelier.Location = new System.Drawing.Point(3, 3);
             this.buttonBelier.Name = "buttonBelier";
-            this.buttonBelier.Size = new System.Drawing.Size(127, 219);
+            this.buttonBelier.Size = new System.Drawing.Size(107, 164);
             this.buttonBelier.TabIndex = 0;
             this.buttonBelier.UseVisualStyleBackColor = true;
             this.buttonBelier.Click += new System.EventHandler(this.buttonBelier_Click);
@@ -224,11 +224,12 @@ namespace FortuneMachine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(684, 341);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "SelectionForm";
             this.Text = "Selectionnez votre signe astrologique";
+            this.TopMost = true;
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
