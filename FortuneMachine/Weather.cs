@@ -65,13 +65,13 @@ namespace FortuneMachine
                 return dataReceived;
             }
 
-            dynamic json = JsonConvert.DeserializeObject(dataReceived);
-            dynamic dailyNode = json.daily;
-            string averageTemp = "";
-            string weather = "";
-
             try
             {
+                dynamic json = JsonConvert.DeserializeObject(dataReceived);
+                dynamic dailyNode = json.daily;
+                string averageTemp = "";
+                string weather = "";
+
                 foreach (var day in dailyNode)
                 {
                     double dt = Convert.ToDouble(day.dt);

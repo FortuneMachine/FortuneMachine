@@ -16,17 +16,14 @@ namespace FortuneMachine
         private int chuckNorrisFactPrice = 1;
         private int airQualityPrice = 1;
         private int astroPredictionPrice = 1;
+        private int randomMoviePrice = 1;
+        private int randomReceipePrice = 1;
 
         public Interface()
         {
             InitializeComponent();
         }
 
-        /// <summary>
-        /// Méthode executée au lors du chargement de la fenêtre principale
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void Interface_Load(object sender, EventArgs e)
         {
             LoadConfig();
@@ -40,10 +37,6 @@ namespace FortuneMachine
             tempGPS.UpdateLocation();
         }
 
-
-        /// <summary>
-        /// Méthode pour cacher les onglets pour les différentes pages (Bienvenue, choix, à propos)
-        /// </summary>
         public void HideTabControlHeaders()
         {
             this.tabControlMain.Appearance = TabAppearance.FlatButtons;
@@ -51,12 +44,6 @@ namespace FortuneMachine
             this.tabControlMain.SizeMode = TabSizeMode.Fixed;
         }
 
-
-        /// <summary>
-        /// Méthode qui gère l'appui sur le bouton Météo
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void buttonWeather_Click(object sender, EventArgs e)
         {
             if (CheckSufficientCredits(weatherForecastPrice) == true)
@@ -66,13 +53,7 @@ namespace FortuneMachine
             }
         }
 
-
-        /// <summary>
-        /// Méthode qui gère l'appui sur le bouton Chuck Norris Fact
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void buttonChuckNorris_Click(object sender, EventArgs e)
+        private void buttonChucNorrisFact_Click(object sender, EventArgs e)
         {
             if (CheckSufficientCredits(chuckNorrisFactPrice) == true)
             {
@@ -81,12 +62,6 @@ namespace FortuneMachine
             }
         }
 
-
-        /// <summary>
-        /// Méthode qui gère l'appui sur le bouton Qualité de l'air
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void buttonAirQuality_Click(object sender, EventArgs e)
         {
             if (CheckSufficientCredits(airQualityPrice) == true)
@@ -96,47 +71,29 @@ namespace FortuneMachine
             }
         }
 
-
-        /// <summary>
-        /// Méthode qui gère l'appui sur le bouton Horoscope Amour
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void buttonAstroLove_Click(object sender, EventArgs e)
+        private void buttonMovie_Click(object sender, EventArgs e)
         {
-            if (CheckSufficientCredits(astroPredictionPrice) == true)
+            if (CheckSufficientCredits(randomMoviePrice) == true)
             {
-                if (TryPrintAnswer(Horoscope.GetLovePrediction()) == true)
-                    RemoveCredits(astroPredictionPrice);
+                if (TryPrintAnswer(Movie.GetRandomMovie()) == true)
+                    RemoveCredits(randomMoviePrice);
             }
         }
 
-
-        /// <summary>
-        /// Méthode qui gère l'appui sur le bouton Horoscope Argent
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void buttonAstroMoney_Click(object sender, EventArgs e)
+        private void buttonReceipe_Click(object sender, EventArgs e)
         {
-            if (CheckSufficientCredits(astroPredictionPrice) == true)
+            if (CheckSufficientCredits(randomReceipePrice) == true)
             {
-                if (TryPrintAnswer(Horoscope.GetMoneyPrediction()) == true)
-                    RemoveCredits(astroPredictionPrice);
+                if (TryPrintAnswer(Receipe.GetRandomReceipe()) == true)
+                    RemoveCredits(randomReceipePrice);
             }
         }
 
-
-        /// <summary>
-        /// Méthode qui gère l'appui sur le bouton Horoscope Travail
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void buttonAstroWork_Click(object sender, EventArgs e)
+        private void buttonAstroWink_Click(object sender, EventArgs e)
         {
             if (CheckSufficientCredits(astroPredictionPrice) == true)
             {
-                if (TryPrintAnswer(Horoscope.GetWorkPrediction()) == true)
+                if (TryPrintAnswer(Horoscope.GetWinkPrediction()) == true)
                     RemoveCredits(astroPredictionPrice);
             }
         }
@@ -224,14 +181,25 @@ namespace FortuneMachine
         {
             if (ConfigurationManager.AppSettings.Get("Credits") != null)
                 this.credits = Convert.ToInt32(ConfigurationManager.AppSettings.Get("Credits"));
+
             if (ConfigurationManager.AppSettings.Get("WeatherForecastPrice") != null)
             this.weatherForecastPrice = Convert.ToInt32(ConfigurationManager.AppSettings.Get("WeatherForecastPrice"));
+
             if (ConfigurationManager.AppSettings.Get("ChuckNorrisFactPrice") != null)
                 this.chuckNorrisFactPrice = Convert.ToInt32(ConfigurationManager.AppSettings.Get("ChuckNorrisFactPrice"));
+
             if (ConfigurationManager.AppSettings.Get("AirQualityPrice") != null)
                 this.airQualityPrice = Convert.ToInt32(ConfigurationManager.AppSettings.Get("AirQualityPrice"));
+
             if (ConfigurationManager.AppSettings.Get("AstroPredictionPrice") != null)
                 this.astroPredictionPrice = Convert.ToInt32(ConfigurationManager.AppSettings.Get("AstroPredictionPrice"));
+
+            if (ConfigurationManager.AppSettings.Get("RandomMoviePrice") != null)
+                this.randomMoviePrice = Convert.ToInt32(ConfigurationManager.AppSettings.Get("RandomMoviePrice"));
+
+            if (ConfigurationManager.AppSettings.Get("RandomReceipePrice") != null)
+                this.randomReceipePrice = Convert.ToInt32(ConfigurationManager.AppSettings.Get("RandomReceipePrice"));
+
         }
 
         private void SaveCredits()
