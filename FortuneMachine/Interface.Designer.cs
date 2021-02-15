@@ -47,12 +47,16 @@ namespace FortuneMachine
             this.pictureBoxSeeMore = new System.Windows.Forms.PictureBox();
             this.buttonChucNorrisFact = new System.Windows.Forms.Button();
             this.tabPageSeeMore = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControlMain.SuspendLayout();
+            this.tabPageWelcome.SuspendLayout();
             this.tabPageChoices.SuspendLayout();
             this.tableLayoutPanelChoices.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFortuneTeller)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSeeMore)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlMain
@@ -63,16 +67,20 @@ namespace FortuneMachine
             this.tabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlMain.Location = new System.Drawing.Point(0, 0);
             this.tabControlMain.Name = "tabControlMain";
+            this.tabControlMain.Padding = new System.Drawing.Point(0, 0);
             this.tabControlMain.SelectedIndex = 0;
             this.tabControlMain.Size = new System.Drawing.Size(800, 480);
             this.tabControlMain.TabIndex = 0;
             // 
             // tabPageWelcome
             // 
+            this.tabPageWelcome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPageWelcome.BackgroundImage")));
+            this.tabPageWelcome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPageWelcome.Controls.Add(this.tableLayoutPanel1);
             this.tabPageWelcome.Location = new System.Drawing.Point(4, 24);
             this.tabPageWelcome.Name = "tabPageWelcome";
             this.tabPageWelcome.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageWelcome.Size = new System.Drawing.Size(925, 491);
+            this.tabPageWelcome.Size = new System.Drawing.Size(792, 452);
             this.tabPageWelcome.TabIndex = 0;
             this.tabPageWelcome.UseVisualStyleBackColor = true;
             // 
@@ -116,18 +124,18 @@ namespace FortuneMachine
             this.tableLayoutPanelChoices.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanelChoices.Name = "tableLayoutPanelChoices";
             this.tableLayoutPanelChoices.RowCount = 12;
-            this.tableLayoutPanelChoices.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21F));
-            this.tableLayoutPanelChoices.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21F));
-            this.tableLayoutPanelChoices.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanelChoices.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
+            this.tableLayoutPanelChoices.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.70833F));
+            this.tableLayoutPanelChoices.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.70833F));
+            this.tableLayoutPanelChoices.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.41667F));
+            this.tableLayoutPanelChoices.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.083333F));
             this.tableLayoutPanelChoices.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 3F));
-            this.tableLayoutPanelChoices.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
-            this.tableLayoutPanelChoices.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.16598F));
-            this.tableLayoutPanelChoices.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.751038F));
-            this.tableLayoutPanelChoices.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
-            this.tableLayoutPanelChoices.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanelChoices.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanelChoices.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
+            this.tableLayoutPanelChoices.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.083333F));
+            this.tableLayoutPanelChoices.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.45833F));
+            this.tableLayoutPanelChoices.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.45833F));
+            this.tableLayoutPanelChoices.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.083333F));
+            this.tableLayoutPanelChoices.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.45833F));
+            this.tableLayoutPanelChoices.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.45833F));
+            this.tableLayoutPanelChoices.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.083333F));
             this.tableLayoutPanelChoices.Size = new System.Drawing.Size(786, 446);
             this.tableLayoutPanelChoices.TabIndex = 0;
             // 
@@ -136,7 +144,7 @@ namespace FortuneMachine
             this.ChoicesSpacer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.ChoicesSpacer.BackColor = System.Drawing.Color.DimGray;
             this.tableLayoutPanelChoices.SetColumnSpan(this.ChoicesSpacer, 10);
-            this.ChoicesSpacer.Location = new System.Drawing.Point(3, 241);
+            this.ChoicesSpacer.Location = new System.Drawing.Point(3, 214);
             this.ChoicesSpacer.Name = "ChoicesSpacer";
             this.ChoicesSpacer.Size = new System.Drawing.Size(780, 1);
             this.ChoicesSpacer.TabIndex = 1;
@@ -154,10 +162,10 @@ namespace FortuneMachine
             this.buttonWeather.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(190)))), ((int)(((byte)(251)))));
             this.buttonWeather.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(190)))), ((int)(((byte)(251)))));
             this.buttonWeather.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonWeather.Location = new System.Drawing.Point(81, 252);
+            this.buttonWeather.Location = new System.Drawing.Point(81, 226);
             this.buttonWeather.Name = "buttonWeather";
             this.tableLayoutPanelChoices.SetRowSpan(this.buttonWeather, 2);
-            this.buttonWeather.Size = new System.Drawing.Size(150, 82);
+            this.buttonWeather.Size = new System.Drawing.Size(150, 94);
             this.buttonWeather.TabIndex = 3;
             this.buttonWeather.TabStop = false;
             this.buttonWeather.UseVisualStyleBackColor = true;
@@ -172,10 +180,10 @@ namespace FortuneMachine
             this.buttonAirQuality.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tableLayoutPanelChoices.SetColumnSpan(this.buttonAirQuality, 2);
             this.buttonAirQuality.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonAirQuality.Location = new System.Drawing.Point(549, 252);
+            this.buttonAirQuality.Location = new System.Drawing.Point(549, 226);
             this.buttonAirQuality.Name = "buttonAirQuality";
             this.tableLayoutPanelChoices.SetRowSpan(this.buttonAirQuality, 2);
-            this.buttonAirQuality.Size = new System.Drawing.Size(150, 82);
+            this.buttonAirQuality.Size = new System.Drawing.Size(150, 94);
             this.buttonAirQuality.TabIndex = 6;
             this.buttonAirQuality.TabStop = false;
             this.buttonAirQuality.UseVisualStyleBackColor = true;
@@ -194,10 +202,10 @@ namespace FortuneMachine
             this.buttonMovie.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(190)))), ((int)(((byte)(251)))));
             this.buttonMovie.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(190)))), ((int)(((byte)(251)))));
             this.buttonMovie.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonMovie.Location = new System.Drawing.Point(81, 348);
+            this.buttonMovie.Location = new System.Drawing.Point(81, 335);
             this.buttonMovie.Name = "buttonMovie";
             this.tableLayoutPanelChoices.SetRowSpan(this.buttonMovie, 2);
-            this.buttonMovie.Size = new System.Drawing.Size(150, 82);
+            this.buttonMovie.Size = new System.Drawing.Size(150, 94);
             this.buttonMovie.TabIndex = 4;
             this.buttonMovie.TabStop = false;
             this.buttonMovie.UseVisualStyleBackColor = true;
@@ -212,10 +220,10 @@ namespace FortuneMachine
             this.buttonReceipe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tableLayoutPanelChoices.SetColumnSpan(this.buttonReceipe, 2);
             this.buttonReceipe.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonReceipe.Location = new System.Drawing.Point(315, 348);
+            this.buttonReceipe.Location = new System.Drawing.Point(315, 335);
             this.buttonReceipe.Name = "buttonReceipe";
             this.tableLayoutPanelChoices.SetRowSpan(this.buttonReceipe, 2);
-            this.buttonReceipe.Size = new System.Drawing.Size(150, 82);
+            this.buttonReceipe.Size = new System.Drawing.Size(150, 94);
             this.buttonReceipe.TabIndex = 7;
             this.buttonReceipe.TabStop = false;
             this.buttonReceipe.UseVisualStyleBackColor = true;
@@ -230,10 +238,10 @@ namespace FortuneMachine
             this.buttonWork.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tableLayoutPanelChoices.SetColumnSpan(this.buttonWork, 2);
             this.buttonWork.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonWork.Location = new System.Drawing.Point(549, 348);
+            this.buttonWork.Location = new System.Drawing.Point(549, 335);
             this.buttonWork.Name = "buttonWork";
             this.tableLayoutPanelChoices.SetRowSpan(this.buttonWork, 2);
-            this.buttonWork.Size = new System.Drawing.Size(150, 82);
+            this.buttonWork.Size = new System.Drawing.Size(150, 94);
             this.buttonWork.TabIndex = 8;
             this.buttonWork.TabStop = false;
             this.buttonWork.UseVisualStyleBackColor = true;
@@ -244,7 +252,7 @@ namespace FortuneMachine
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureBox2.BackgroundImage = global::FortuneMachine.Properties.Resources.coins;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(627, 43);
+            this.pictureBox2.Location = new System.Drawing.Point(627, 28);
             this.pictureBox2.Name = "pictureBox2";
             this.tableLayoutPanelChoices.SetRowSpan(this.pictureBox2, 2);
             this.pictureBox2.Size = new System.Drawing.Size(72, 100);
@@ -259,7 +267,7 @@ namespace FortuneMachine
             this.labelCredits.Location = new System.Drawing.Point(705, 0);
             this.labelCredits.Name = "labelCredits";
             this.tableLayoutPanelChoices.SetRowSpan(this.labelCredits, 2);
-            this.labelCredits.Size = new System.Drawing.Size(78, 186);
+            this.labelCredits.Size = new System.Drawing.Size(78, 156);
             this.labelCredits.TabIndex = 10;
             this.labelCredits.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelCredits.Click += new System.EventHandler(this.labelCredits_Click);
@@ -270,11 +278,11 @@ namespace FortuneMachine
             this.labelChoicesMessage.AutoSize = true;
             this.tableLayoutPanelChoices.SetColumnSpan(this.labelChoicesMessage, 6);
             this.labelChoicesMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.labelChoicesMessage.Location = new System.Drawing.Point(159, 196);
+            this.labelChoicesMessage.Location = new System.Drawing.Point(159, 167);
             this.labelChoicesMessage.Name = "labelChoicesMessage";
             this.labelChoicesMessage.Size = new System.Drawing.Size(462, 24);
             this.labelChoicesMessage.TabIndex = 0;
-            this.labelChoicesMessage.Text = "Qu\'est-ce qui t\'amènes aventurier ?";
+            this.labelChoicesMessage.Text = "Quel bon vent vous amène aventurier ?";
             this.labelChoicesMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBoxFortuneTeller
@@ -288,7 +296,7 @@ namespace FortuneMachine
             this.pictureBoxFortuneTeller.Location = new System.Drawing.Point(237, 3);
             this.pictureBoxFortuneTeller.Name = "pictureBoxFortuneTeller";
             this.tableLayoutPanelChoices.SetRowSpan(this.pictureBoxFortuneTeller, 2);
-            this.pictureBoxFortuneTeller.Size = new System.Drawing.Size(306, 180);
+            this.pictureBoxFortuneTeller.Size = new System.Drawing.Size(306, 150);
             this.pictureBoxFortuneTeller.TabIndex = 2;
             this.pictureBoxFortuneTeller.TabStop = false;
             // 
@@ -297,7 +305,7 @@ namespace FortuneMachine
             this.pictureBoxSeeMore.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBoxSeeMore.BackgroundImage = global::FortuneMachine.Properties.Resources.question;
             this.pictureBoxSeeMore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBoxSeeMore.Location = new System.Drawing.Point(81, 50);
+            this.pictureBoxSeeMore.Location = new System.Drawing.Point(81, 35);
             this.pictureBoxSeeMore.Name = "pictureBoxSeeMore";
             this.tableLayoutPanelChoices.SetRowSpan(this.pictureBoxSeeMore, 2);
             this.pictureBoxSeeMore.Size = new System.Drawing.Size(72, 85);
@@ -313,10 +321,10 @@ namespace FortuneMachine
             this.buttonChucNorrisFact.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tableLayoutPanelChoices.SetColumnSpan(this.buttonChucNorrisFact, 2);
             this.buttonChucNorrisFact.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonChucNorrisFact.Location = new System.Drawing.Point(315, 252);
+            this.buttonChucNorrisFact.Location = new System.Drawing.Point(315, 226);
             this.buttonChucNorrisFact.Name = "buttonChucNorrisFact";
             this.tableLayoutPanelChoices.SetRowSpan(this.buttonChucNorrisFact, 2);
-            this.buttonChucNorrisFact.Size = new System.Drawing.Size(150, 82);
+            this.buttonChucNorrisFact.Size = new System.Drawing.Size(150, 94);
             this.buttonChucNorrisFact.TabIndex = 12;
             this.buttonChucNorrisFact.TabStop = false;
             this.buttonChucNorrisFact.UseVisualStyleBackColor = true;
@@ -327,9 +335,38 @@ namespace FortuneMachine
             this.tabPageSeeMore.Location = new System.Drawing.Point(4, 24);
             this.tabPageSeeMore.Name = "tabPageSeeMore";
             this.tabPageSeeMore.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSeeMore.Size = new System.Drawing.Size(925, 491);
+            this.tabPageSeeMore.Size = new System.Drawing.Size(792, 452);
             this.tabPageSeeMore.TabIndex = 2;
             this.tabPageSeeMore.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(786, 446);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.label1, 2);
+            this.label1.Font = new System.Drawing.Font("Pristina", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(162, 143);
+            this.label1.Name = "label1";
+            this.tableLayoutPanel1.SetRowSpan(this.label1, 2);
+            this.label1.Size = new System.Drawing.Size(462, 160);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Bienvenue sur la Fortune Machine étranger !\r\n\r\nDonne-moi une pièce si tu veux acc" +
+    "éder à mon savoir !\r\n\r\nJ\'accepte les pièces de 2€, 1€, 0.50€, 0,20€ et 0.10€";
             // 
             // Interface
             // 
@@ -345,12 +382,15 @@ namespace FortuneMachine
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Interface_FormClosing);
             this.Load += new System.EventHandler(this.Interface_Load);
             this.tabControlMain.ResumeLayout(false);
+            this.tabPageWelcome.ResumeLayout(false);
             this.tabPageChoices.ResumeLayout(false);
             this.tableLayoutPanelChoices.ResumeLayout(false);
             this.tableLayoutPanelChoices.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFortuneTeller)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSeeMore)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -374,6 +414,8 @@ namespace FortuneMachine
         private System.Windows.Forms.PictureBox pictureBoxFortuneTeller;
         private System.Windows.Forms.PictureBox pictureBoxSeeMore;
         private System.Windows.Forms.Button buttonChucNorrisFact;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label1;
     }
 }
 

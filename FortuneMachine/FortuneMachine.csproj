@@ -196,5 +196,8 @@
   <ItemGroup>
     <None Include="Resources\multimedia.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background_stretch.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
