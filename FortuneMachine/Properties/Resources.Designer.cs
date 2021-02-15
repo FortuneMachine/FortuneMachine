@@ -193,6 +193,16 @@ namespace FortuneMachine.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo_polytech {
+            get {
+                object obj = ResourceManager.GetObject("logo_polytech", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap multimedia {
             get {
                 object obj = ResourceManager.GetObject("multimedia", resourceCulture);
@@ -206,6 +216,16 @@ namespace FortuneMachine.Properties {
         internal static System.Drawing.Bitmap Poisson {
             get {
                 object obj = ResourceManager.GetObject("Poisson", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap previous {
+            get {
+                object obj = ResourceManager.GetObject("previous", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

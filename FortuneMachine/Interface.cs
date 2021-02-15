@@ -227,5 +227,23 @@ namespace FortuneMachine
         {
             AddCredits(1);
         }
+
+        private void labelWelcome_Click(object sender, EventArgs e)
+        {
+            ShowChoicesPage();
+        }
+
+        private void pictureBoxSeeMore_Click(object sender, EventArgs e)
+        {
+            ShowSeeMorePage();
+        }
+
+        private void pictureBoxPrevious_Click(object sender, EventArgs e)
+        {
+            if (this.credits > 0)
+                ShowChoicesPage();
+            else
+                ShowWelcomePage();
+        }
     }
 }
