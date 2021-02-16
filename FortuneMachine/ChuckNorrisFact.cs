@@ -44,10 +44,12 @@ namespace FortuneMachine
 
         public static string GetJoke()
         {
-            string joke = "";
+            string returnStatus = "";
+            string messageToShow = "";
+            string messageToPrint = "";
 
             string dataReceived = GetRawData();
-            if (dataReceived.ToLower().Contains("error"))
+            if (dataReceived.ToLower().Contains("error_"))
             {
                 return dataReceived;
             }
@@ -55,14 +57,22 @@ namespace FortuneMachine
             try
             {
                 dynamic json = JsonConvert.DeserializeObject(dataReceived);
-                joke = json.value.joke;
-                return "ok_" + joke;
+                string joke = json.value.joke;
+                joke = joke.Replace("&quot;", @"""");
+
+                returnStatus = "ok";
+
+                messageToShow = joke;
+
+                messageToPrint = joke;
             }
             catch (Exception ex)
             {
-                return "error_" + ex.Message;
+                returnStatus = "error";
+                messageToShow = ex.Message;
+                messageToPrint = "error";
             }
-
+            return String.Format("{0}_{1}_{2}", returnStatus, messageToShow, messageToPrint);
         }
 
         // TODO : Mettre en paramètre

@@ -54,10 +54,29 @@ namespace FortuneMachine
             return dtDateTime;
         }
 
+        private static string GetOneDayResults(dynamic node)
+        {
+            string formattedValues = "";
+            double dt = Convert.ToDouble(node.dt);
+            DateTime currDate = UnixTimeStampToDateTime(dt);
+            string averageTemp = node.temp.day;
+            string weather = node.weather[0].description;
+
+            formattedValues = currDate.ToShortDateString() + "\n";
+            formattedValues += "Moyenne : " + averageTemp + "°C\n";
+            // Put the first character in uppercase
+            formattedValues += char.ToUpper(weather[0]) + weather.Substring(1);
+            return formattedValues;
+        }
+
         public static string GetWeatherForecast(double latitude, double longitude)
         {
             LoadAPIKey();
-            string meteoForecast = "";
+            string returnStatus = "";
+            string messageToShow = "";
+            string messageToPrint = "";
+            string weekWeatherForecast = "";
+            string tomorrowsWeatherForecast = "";
 
             string dataReceived = GetRawData(latitude, longitude);
             if (dataReceived.ToLower().Contains("error"))
@@ -69,29 +88,25 @@ namespace FortuneMachine
             {
                 dynamic json = JsonConvert.DeserializeObject(dataReceived);
                 dynamic dailyNode = json.daily;
-                string averageTemp = "";
-                string weather = "";
+                dynamic tomorrowsNode = json.daily[1];
 
                 foreach (var day in dailyNode)
                 {
-                    double dt = Convert.ToDouble(day.dt);
-                    DateTime currDate = UnixTimeStampToDateTime(dt);
-                    averageTemp = day.temp.day;
-                    //minTemp = day.temp.min;
-                    //maxTemp = day.temp.max;
-                    weather = day.weather[0].description;
-
-                    meteoForecast += currDate.ToShortDateString() + "\n";
-                    meteoForecast += "Température moyenne : " + averageTemp + "°C\n";
-                    // Put the first character in uppercase
-                    meteoForecast += char.ToUpper(weather[0]) + weather.Substring(1) + "\n\n";
+                    weekWeatherForecast += GetOneDayResults(day) + "\n\n";
                 }
-                return "ok_" + meteoForecast;
+
+                tomorrowsWeatherForecast = GetOneDayResults(tomorrowsNode);
+                returnStatus = "ok";
+                messageToShow = weekWeatherForecast;
+                messageToPrint = tomorrowsWeatherForecast;
             }
             catch (Exception ex)
             {
-                return "error_" + ex.Message;
+                returnStatus = "error";
+                messageToShow = ex.Message;
+                messageToPrint = "error";
             }
+            return String.Format("{0}_{1}_{2}", returnStatus, messageToShow, messageToPrint);
 
         }
     }

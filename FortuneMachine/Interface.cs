@@ -11,6 +11,8 @@ namespace FortuneMachine
         public double Latitude { get; set; }
         public double Longitude { get; set; }
 
+        private SerialCommunication serial;
+
         private int credits = 0;
         private int weatherForecastPrice = 1;
         private int chuckNorrisFactPrice = 1;
@@ -28,13 +30,16 @@ namespace FortuneMachine
         {
             LoadConfig();
             HideTabControlHeaders();
-            // TODO : Default apge = WelcomePage
-            ShowChoicesPage();
+            if (this.credits > 0)
+                ShowChoicesPage();
+            else
+                ShowWelcomePage();
             UpdateCreditsDisplay();
             this.Latitude = 0;
             this.Longitude = 0;
             GPS tempGPS = new GPS(this);
             tempGPS.UpdateLocation();
+            serial = new SerialCommunication();
         }
 
         public void HideTabControlHeaders()
@@ -101,21 +106,32 @@ namespace FortuneMachine
         private bool TryPrintAnswer(string answer)
         {
             string[] temp = answer.Split('_');
-            if (temp.Length < 2)
+            if (temp.Length < 3)
             {
                 MessageBox.Show("Erreur avec le message de retour : " + answer, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            string status = temp[0];
-            string message = temp[1];
-            if (status.ToLower().Contains("ok"))
+
+            try
             {
-                MessageBox.Show(message, "Succes", MessageBoxButtons.OK);
-                return true;
+                string status = temp[0];
+                string messageToShow = temp[1];
+                string messageToPrint = temp[2];
+
+                if (status.ToLower().Contains("ok"))
+                {
+                    MessageBox.Show(messageToShow, "Succes", MessageBoxButtons.OK);
+                    serial.Print(messageToPrint);
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show(messageToShow, status, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show(message, status, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
         }

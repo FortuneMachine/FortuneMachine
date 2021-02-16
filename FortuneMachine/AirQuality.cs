@@ -65,10 +65,12 @@ namespace FortuneMachine
         public static string GetCurrentAirQuality(double latitude, double longitude)
         {
             LoadAPIKey();
-            string airQualityReport = "";
+            string returnStatus = "";
+            string messageToShow = "";
+            string messageToPrint = "";
 
             string dataReceived = GetRawData(latitude, longitude);
-            if (dataReceived.ToLower().Contains("error"))
+            if (dataReceived.ToLower().Contains("error_"))
             {
                 return dataReceived;
             }
@@ -78,15 +80,30 @@ namespace FortuneMachine
                 dynamic json = JsonConvert.DeserializeObject(dataReceived);
                 Single qualityIndex = Convert.ToSingle(json.data.aqi);
                 string quality = GetQualityByIndex(qualityIndex);
-                airQualityReport = "Indice de qualité : " + qualityIndex.ToString() + "\n";
-                airQualityReport += quality;
-                return "ok_" + airQualityReport;
+                string carbon = Convert.ToString(json.data.iaqi.co.v); // monoxyde de carbone
+                string azote = Convert.ToString(json.data.iaqi.no2.v); // dioxyde d'azote
+                string ozone = Convert.ToString(json.data.iaqi.o3.v);
+                string PM25 = Convert.ToString(json.data.iaqi.pm25.v);
+                string PM10 = Convert.ToString(json.data.iaqi.pm10.v);
+
+                returnStatus = "ok";
+
+                messageToShow = String.Format("Indice de qualité de l'air : {0} ({1}) \n", qualityIndex, quality);
+                messageToShow += String.Format(" - Monoxyde de carbone : {0} \n", carbon);
+                messageToShow += String.Format(" - Dioxyde d'azote : {0} \n", azote);
+                messageToShow += String.Format(" - Ozone : {0} \n", ozone);
+                messageToShow += String.Format(" - PM 2.5 : {0} \n", PM25);
+                messageToShow += String.Format(" - PM 10 : {0} \n", PM10);
+                
+                messageToPrint = String.Format("Qualité de l'air : {0} ({1}) \n", qualityIndex, quality);              
             }
             catch (Exception ex)
             {
-                return "error_" + ex.Message;
+                returnStatus = "error";
+                messageToShow = ex.Message;
+                messageToPrint = "error";
             }
-
+            return String.Format("{0}_{1}_{2}", returnStatus, messageToShow, messageToPrint);
         }
     }
 }

@@ -38,9 +38,12 @@ namespace FortuneMachine
         
         public static string GetLovePrediction()
         {
+            string returnStatus = "";
+            string messageToShow = "";
+            string messageToPrint = "";
+
             try
             {
-                string lovePrediction = "_";
                 string description = GetRSSNodeDescription();
                 string[] sections = description.Split(new String[] { "<br><br>" }, StringSplitOptions.None);
                 foreach (string section in sections)
@@ -51,22 +54,33 @@ namespace FortuneMachine
                     string partTitle = parts[0];
                     string partText = parts[1];
                     if (partTitle.Contains("Amour"))
-                        lovePrediction = partText;
+                    {
+                        returnStatus = "ok";
+                        messageToShow = "Amour : " + partText;
+                        if (partText.Length > 100)
+                            messageToPrint = partText.Substring(0, 100) + "...";
+                        else
+                            messageToPrint = partText;
+                    }
                 }
-                return "ok_" + lovePrediction;
             }
             catch (Exception ex)
             {
-                return "error_" + ex.Message;
+                returnStatus = "error";
+                messageToShow = ex.Message;
+                messageToPrint = "error";
             }
-
+            return String.Format("{0}_{1}_{2}", returnStatus, messageToShow, messageToPrint);
         }
 
         public static string GetMoneyPrediction()
         {
+            string returnStatus = "";
+            string messageToShow = "";
+            string messageToPrint = "";
+
             try
-            { 
-                string moneyPrediction = "_";
+            {
                 string description = GetRSSNodeDescription();
                 string[] sections = description.Split(new String[] { "<br><br>" }, StringSplitOptions.None);
                 foreach (string section in sections)
@@ -77,21 +91,33 @@ namespace FortuneMachine
                     string partTitle = parts[0];
                     string partText = parts[1];
                     if (partTitle.Contains("Argent"))
-                        moneyPrediction = partText;
+                    {
+                        returnStatus = "ok";
+                        messageToShow = "Argent : " + partText;
+                        if (partText.Length > 100)
+                            messageToPrint = partText.Substring(0, 100) + "...";
+                        else
+                            messageToPrint = partText;
+                    }
                 }
-                return "ok_" + moneyPrediction;
             }
             catch (Exception ex)
             {
-                return "error_" + ex.Message;
+                returnStatus = "error";
+                messageToShow = ex.Message;
+                messageToPrint = "error";
             }
+            return String.Format("{0}_{1}_{2}", returnStatus, messageToShow, messageToPrint);
         }
 
         public static string GetWorkPrediction()
         {
+            string returnStatus = "";
+            string messageToShow = "";
+            string messageToPrint = "";
+
             try
-            { 
-                string workPrediction = "_";
+            {
                 string description = GetRSSNodeDescription();
                 string[] sections = description.Split(new String[] { "<br><br>" }, StringSplitOptions.None);
                 foreach (string section in sections)
@@ -102,21 +128,33 @@ namespace FortuneMachine
                     string partTitle = parts[0];
                     string partText = parts[1];
                     if (partTitle.Contains("Travail"))
-                        workPrediction = partText;
+                    {
+                        returnStatus = "ok";
+                        messageToShow = "Travail : " + partText;
+                        if (partText.Length > 100)
+                            messageToPrint = partText.Substring(0, 100) + "...";
+                        else
+                            messageToPrint = partText;
+                    }
                 }
-                return "ok_" + workPrediction;
-                }
+            }
             catch (Exception ex)
             {
-                return "error_" + ex.Message;
+                returnStatus = "error";
+                messageToShow = ex.Message;
+                messageToPrint = "error";
             }
+            return String.Format("{0}_{1}_{2}", returnStatus, messageToShow, messageToPrint);
         }
 
         public static string GetWinkPrediction()
         {
+            string returnStatus = "";
+            string messageToShow = "";
+            string messageToPrint = "";
+
             try
             { 
-                string winkPrediction = "_";
                 string description = GetRSSNodeDescription();
                 string[] sections = description.Split(new String[] { "<br><br>" }, StringSplitOptions.None);
                 foreach (string section in sections)
@@ -127,14 +165,23 @@ namespace FortuneMachine
                     string partTitle = parts[0];
                     string partText = parts[1];
                     if (partTitle.Contains("Clin d'oeil"))
-                        winkPrediction = partText;
+                    {
+                        returnStatus = "ok";
+                        messageToShow = "Clin d'oeil : " + partText;
+                        if (partText.Length > 100)
+                            messageToPrint = partText.Substring(0, 100) + "...";
+                        else
+                            messageToPrint = partText;
+                    }
                 }
-                return "ok_" + winkPrediction;
             }
             catch (Exception ex)
             {
-                return "error_" + ex.Message;
+                returnStatus = "error";
+                messageToShow = ex.Message;
+                messageToPrint = "error";
             }
+            return String.Format("{0}_{1}_{2}", returnStatus, messageToShow, messageToPrint);
         }
     }
 }

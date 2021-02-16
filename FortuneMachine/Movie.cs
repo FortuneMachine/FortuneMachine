@@ -47,27 +47,33 @@ namespace FortuneMachine
         public static string GetRandomMovie()
         {
             LoadAPIKey();
-            string randomMovieTitle = "";
+            string returnStatus = "";
+            string messageToShow = "";
+            string messageToPrint = "";
 
             string dataReceived = GetRawData();
-            if (dataReceived.ToLower().Contains("error"))
+            if (dataReceived.ToLower().Contains("error_"))
             {
                 return dataReceived;
             }
 
-            dynamic json = JsonConvert.DeserializeObject(dataReceived);
-            Random rnd = new Random();
-            randomMovieTitle = json.results[rnd.Next(0, 20)].title;
-
             try
             {
-                return "ok_" + randomMovieTitle;
+                dynamic json = JsonConvert.DeserializeObject(dataReceived);
+                Random rnd = new Random();
+                string randomMovieTitle = json.results[rnd.Next(0, 20)].title;
+
+                returnStatus = "ok";
+                messageToShow = "Film : " + randomMovieTitle;
+                messageToPrint = randomMovieTitle;
             }
             catch (Exception ex)
             {
-                return "error_" + ex.Message;
+                returnStatus = "error";
+                messageToShow = ex.Message;
+                messageToPrint = "error";
             }
-
+            return String.Format("{0}_{1}_{2}", returnStatus, messageToShow, messageToPrint);
         }
     }
 }
