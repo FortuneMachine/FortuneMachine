@@ -121,7 +121,7 @@ namespace FortuneMachine
                 if (status.ToLower().Contains("ok"))
                 {
                     MessageBox.Show(messageToShow, "Succes", MessageBoxButtons.OK);
-                    serial.Print(messageToPrint);
+                    //serial.Print(messageToPrint);
                     return true;
                 }
                 else

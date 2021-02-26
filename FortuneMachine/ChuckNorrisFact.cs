@@ -13,7 +13,7 @@ namespace FortuneMachine
         private static string templateQuery = "http://api.icndb.com/jokes/random";
         private static Boolean explicitContent = true;
 
-        public static string GetRawData()
+        private static string GetRawData()
         {
             string result = "";
             string url = "";

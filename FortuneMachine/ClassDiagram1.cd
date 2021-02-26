@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="FortuneMachine.AirQuality" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AEAAIAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAoAA=</HashCode>
+      <FileName>AirQuality.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FortuneMachine.ChuckNorrisFact" Collapsed="true">
+    <Position X="5.5" Y="1.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAIAAAABAAAAAAAAAAAAAAAAIAAAAAAAAAIAA=</HashCode>
+      <FileName>ChuckNorrisFact.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FortuneMachine.GPS" Collapsed="true">
+    <Position X="0.5" Y="3.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAIAAAAAgAAAAAAAAQAAAAAAAAAAAAAAAEAAQA=</HashCode>
+      <FileName>GPS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FortuneMachine.Horoscope" Collapsed="true">
+    <Position X="0.5" Y="3" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAgIABAAAAQEAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Horoscope.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FortuneMachine.Interface" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="4.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>iAAAQdAAAeBAkHAAICCMFAKSBUgARRAAMUOAgYkrASA=</HashCode>
+      <FileName>Interface.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FortuneMachine.Movie" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAIAAAAAAAAAAAAAAAABAAAAAAAAAAgAAAIAA=</HashCode>
+      <FileName>Movie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FortuneMachine.Receipe" Collapsed="true">
+    <Position X="5.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAgAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Receipe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FortuneMachine.SelectionForm">
+    <Position X="11.75" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAACAAAAEIgASJBAAiEoAAwgBAEgEIAAAUCCI=</HashCode>
+      <FileName>SelectionForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FortuneMachine.SerialCommunication">
+    <Position X="0.5" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACCEAIAAAQAAAAACgAAAAABAAABAAAAAEAAA=</HashCode>
+      <FileName>SerialCommunication.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FortuneMachine.Weather" Collapsed="true">
+    <Position X="0.5" Y="2.25" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAIAAAAAAAAAAAAAAAAAEgAAAAAIAAgAAAIAA=</HashCode>
+      <FileName>Weather.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

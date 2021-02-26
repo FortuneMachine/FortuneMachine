@@ -31,41 +31,41 @@ namespace FortuneMachine
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Interface));
             this.tabControlMain = new System.Windows.Forms.TabControl();
-            this.tabPageChoices = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanelChoices = new System.Windows.Forms.TableLayoutPanel();
-            this.ChoicesSpacer = new System.Windows.Forms.Panel();
-            this.labelCredits = new System.Windows.Forms.Label();
-            this.labelChoicesMessage = new System.Windows.Forms.Label();
-            this.tabPageSeeMore = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanelSeeMore = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.tabPageWelcome = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.labelWelcome = new System.Windows.Forms.Label();
+            this.tabPageChoices = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanelChoices = new System.Windows.Forms.TableLayoutPanel();
+            this.ChoicesSpacer = new System.Windows.Forms.Panel();
             this.buttonWeather = new System.Windows.Forms.Button();
             this.buttonAirQuality = new System.Windows.Forms.Button();
             this.buttonMovie = new System.Windows.Forms.Button();
             this.buttonReceipe = new System.Windows.Forms.Button();
             this.buttonWork = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.labelCredits = new System.Windows.Forms.Label();
+            this.labelChoicesMessage = new System.Windows.Forms.Label();
             this.pictureBoxFortuneTeller = new System.Windows.Forms.PictureBox();
             this.pictureBoxSeeMore = new System.Windows.Forms.PictureBox();
             this.buttonChucNorrisFact = new System.Windows.Forms.Button();
+            this.tabPageSeeMore = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanelSeeMore = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.pictureBoxPrevious = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.tabControlMain.SuspendLayout();
-            this.tabPageChoices.SuspendLayout();
-            this.tableLayoutPanelChoices.SuspendLayout();
-            this.tabPageSeeMore.SuspendLayout();
-            this.tableLayoutPanelSeeMore.SuspendLayout();
             this.tabPageWelcome.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tabPageChoices.SuspendLayout();
+            this.tableLayoutPanelChoices.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFortuneTeller)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSeeMore)).BeginInit();
+            this.tabPageSeeMore.SuspendLayout();
+            this.tableLayoutPanelSeeMore.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrevious)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -82,6 +82,51 @@ namespace FortuneMachine
             this.tabControlMain.SelectedIndex = 0;
             this.tabControlMain.Size = new System.Drawing.Size(800, 480);
             this.tabControlMain.TabIndex = 0;
+            // 
+            // tabPageWelcome
+            // 
+            this.tabPageWelcome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPageWelcome.Controls.Add(this.tableLayoutPanel1);
+            this.tabPageWelcome.Location = new System.Drawing.Point(4, 24);
+            this.tabPageWelcome.Margin = new System.Windows.Forms.Padding(0);
+            this.tabPageWelcome.Name = "tabPageWelcome";
+            this.tabPageWelcome.Size = new System.Drawing.Size(792, 452);
+            this.tabPageWelcome.TabIndex = 0;
+            this.tabPageWelcome.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.BackgroundImage = global::FortuneMachine.Properties.Resources.background_stretch;
+            this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.labelWelcome, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(792, 452);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // labelWelcome
+            // 
+            this.labelWelcome.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelWelcome.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.labelWelcome, 2);
+            this.labelWelcome.Font = new System.Drawing.Font("Pristina", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWelcome.Location = new System.Drawing.Point(165, 146);
+            this.labelWelcome.Name = "labelWelcome";
+            this.tableLayoutPanel1.SetRowSpan(this.labelWelcome, 2);
+            this.labelWelcome.Size = new System.Drawing.Size(462, 160);
+            this.labelWelcome.TabIndex = 0;
+            this.labelWelcome.Text = "Bienvenue sur la Fortune Machine étranger !\r\n\r\nDonne-moi une pièce si tu veux acc" +
+    "éder à mon savoir !\r\n\r\nJ\'accepte les pièces de 2€, 1€, 0.50€, 0,20€ et 0.10€\r\n";
+            this.labelWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelWelcome.Click += new System.EventHandler(this.labelWelcome_Click);
             // 
             // tabPageChoices
             // 
@@ -147,183 +192,6 @@ namespace FortuneMachine
             this.ChoicesSpacer.Name = "ChoicesSpacer";
             this.ChoicesSpacer.Size = new System.Drawing.Size(780, 1);
             this.ChoicesSpacer.TabIndex = 1;
-            // 
-            // labelCredits
-            // 
-            this.labelCredits.AutoSize = true;
-            this.labelCredits.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelCredits.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCredits.Location = new System.Drawing.Point(705, 0);
-            this.labelCredits.Name = "labelCredits";
-            this.tableLayoutPanelChoices.SetRowSpan(this.labelCredits, 2);
-            this.labelCredits.Size = new System.Drawing.Size(78, 156);
-            this.labelCredits.TabIndex = 10;
-            this.labelCredits.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelCredits.Click += new System.EventHandler(this.labelCredits_Click);
-            // 
-            // labelChoicesMessage
-            // 
-            this.labelChoicesMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelChoicesMessage.AutoSize = true;
-            this.tableLayoutPanelChoices.SetColumnSpan(this.labelChoicesMessage, 6);
-            this.labelChoicesMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.labelChoicesMessage.Location = new System.Drawing.Point(159, 167);
-            this.labelChoicesMessage.Name = "labelChoicesMessage";
-            this.labelChoicesMessage.Size = new System.Drawing.Size(462, 24);
-            this.labelChoicesMessage.TabIndex = 0;
-            this.labelChoicesMessage.Text = "Quel bon vent vous amène aventurier ?";
-            this.labelChoicesMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tabPageSeeMore
-            // 
-            this.tabPageSeeMore.Controls.Add(this.tableLayoutPanelSeeMore);
-            this.tabPageSeeMore.Location = new System.Drawing.Point(4, 24);
-            this.tabPageSeeMore.Name = "tabPageSeeMore";
-            this.tabPageSeeMore.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSeeMore.Size = new System.Drawing.Size(792, 452);
-            this.tabPageSeeMore.TabIndex = 2;
-            this.tabPageSeeMore.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanelSeeMore
-            // 
-            this.tableLayoutPanelSeeMore.ColumnCount = 10;
-            this.tableLayoutPanelSeeMore.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanelSeeMore.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanelSeeMore.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanelSeeMore.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanelSeeMore.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanelSeeMore.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanelSeeMore.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanelSeeMore.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanelSeeMore.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanelSeeMore.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanelSeeMore.Controls.Add(this.panel1, 1, 3);
-            this.tableLayoutPanelSeeMore.Controls.Add(this.label3, 1, 4);
-            this.tableLayoutPanelSeeMore.Controls.Add(this.label2, 3, 1);
-            this.tableLayoutPanelSeeMore.Controls.Add(this.pictureBoxPrevious, 1, 0);
-            this.tableLayoutPanelSeeMore.Controls.Add(this.pictureBox3, 7, 0);
-            this.tableLayoutPanelSeeMore.Controls.Add(this.label5, 1, 6);
-            this.tableLayoutPanelSeeMore.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelSeeMore.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanelSeeMore.Name = "tableLayoutPanelSeeMore";
-            this.tableLayoutPanelSeeMore.RowCount = 10;
-            this.tableLayoutPanelSeeMore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanelSeeMore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanelSeeMore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanelSeeMore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanelSeeMore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanelSeeMore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanelSeeMore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanelSeeMore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanelSeeMore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanelSeeMore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanelSeeMore.Size = new System.Drawing.Size(786, 446);
-            this.tableLayoutPanelSeeMore.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.DimGray;
-            this.tableLayoutPanelSeeMore.SetColumnSpan(this.panel1, 8);
-            this.panel1.Location = new System.Drawing.Point(81, 152);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(618, 3);
-            this.panel1.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.tableLayoutPanelSeeMore.SetColumnSpan(this.label5, 8);
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(81, 264);
-            this.label5.Name = "label5";
-            this.tableLayoutPanelSeeMore.SetRowSpan(this.label5, 3);
-            this.label5.Size = new System.Drawing.Size(618, 132);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Cette machine imprime les informations séléctionnées à l\'écran\r\nPour l\'utiliser i" +
-    "nsérer des pièces de 2€, 1€, 0.50€, 0.20€ ou 0.10€\r\n10 centimes = 1 crédit";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.tableLayoutPanelSeeMore.SetColumnSpan(this.label3, 8);
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(81, 176);
-            this.label3.Name = "label3";
-            this.tableLayoutPanelSeeMore.SetRowSpan(this.label3, 2);
-            this.label3.Size = new System.Drawing.Size(618, 88);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Client : Alexis ROLLAND, Enseignant POLYTECH TOURS\r\nRéalisateur : Brice PIQUEUX, " +
-    "Etudiant POLYTECH TOURS";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.tableLayoutPanelSeeMore.SetColumnSpan(this.label2, 4);
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(237, 44);
-            this.label2.Name = "label2";
-            this.tableLayoutPanelSeeMore.SetRowSpan(this.label2, 2);
-            this.label2.Size = new System.Drawing.Size(306, 88);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Fortune Machine V3.0 - 2021";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tabPageWelcome
-            // 
-            this.tabPageWelcome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPageWelcome.Controls.Add(this.tableLayoutPanel1);
-            this.tabPageWelcome.Location = new System.Drawing.Point(4, 24);
-            this.tabPageWelcome.Margin = new System.Windows.Forms.Padding(0);
-            this.tabPageWelcome.Name = "tabPageWelcome";
-            this.tabPageWelcome.Size = new System.Drawing.Size(792, 452);
-            this.tabPageWelcome.TabIndex = 0;
-            this.tabPageWelcome.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.BackgroundImage = global::FortuneMachine.Properties.Resources.background_stretch;
-            this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.labelWelcome, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(792, 452);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // labelWelcome
-            // 
-            this.labelWelcome.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelWelcome.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.labelWelcome, 2);
-            this.labelWelcome.Font = new System.Drawing.Font("Pristina", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWelcome.Location = new System.Drawing.Point(165, 146);
-            this.labelWelcome.Name = "labelWelcome";
-            this.tableLayoutPanel1.SetRowSpan(this.labelWelcome, 2);
-            this.labelWelcome.Size = new System.Drawing.Size(462, 160);
-            this.labelWelcome.TabIndex = 0;
-            this.labelWelcome.Text = "Bienvenue sur la Fortune Machine étranger !\r\n\r\nDonne-moi une pièce si tu veux acc" +
-    "éder à mon savoir !\r\n\r\nJ\'accepte les pièces de 2€, 1€, 0.50€, 0,20€ et 0.10€\r\n";
-            this.labelWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelWelcome.Click += new System.EventHandler(this.labelWelcome_Click);
             // 
             // buttonWeather
             // 
@@ -435,6 +303,32 @@ namespace FortuneMachine
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
             // 
+            // labelCredits
+            // 
+            this.labelCredits.AutoSize = true;
+            this.labelCredits.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelCredits.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCredits.Location = new System.Drawing.Point(705, 0);
+            this.labelCredits.Name = "labelCredits";
+            this.tableLayoutPanelChoices.SetRowSpan(this.labelCredits, 2);
+            this.labelCredits.Size = new System.Drawing.Size(78, 156);
+            this.labelCredits.TabIndex = 10;
+            this.labelCredits.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelCredits.Click += new System.EventHandler(this.labelCredits_Click);
+            // 
+            // labelChoicesMessage
+            // 
+            this.labelChoicesMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelChoicesMessage.AutoSize = true;
+            this.tableLayoutPanelChoices.SetColumnSpan(this.labelChoicesMessage, 6);
+            this.labelChoicesMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.labelChoicesMessage.Location = new System.Drawing.Point(159, 167);
+            this.labelChoicesMessage.Name = "labelChoicesMessage";
+            this.labelChoicesMessage.Size = new System.Drawing.Size(462, 24);
+            this.labelChoicesMessage.TabIndex = 0;
+            this.labelChoicesMessage.Text = "Quel bon vent vous amène aventurier ?";
+            this.labelChoicesMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pictureBoxFortuneTeller
             // 
             this.pictureBoxFortuneTeller.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -481,6 +375,95 @@ namespace FortuneMachine
             this.buttonChucNorrisFact.UseVisualStyleBackColor = true;
             this.buttonChucNorrisFact.Click += new System.EventHandler(this.buttonChucNorrisFact_Click);
             // 
+            // tabPageSeeMore
+            // 
+            this.tabPageSeeMore.Controls.Add(this.tableLayoutPanelSeeMore);
+            this.tabPageSeeMore.Location = new System.Drawing.Point(4, 24);
+            this.tabPageSeeMore.Name = "tabPageSeeMore";
+            this.tabPageSeeMore.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageSeeMore.Size = new System.Drawing.Size(792, 452);
+            this.tabPageSeeMore.TabIndex = 2;
+            this.tabPageSeeMore.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanelSeeMore
+            // 
+            this.tableLayoutPanelSeeMore.ColumnCount = 10;
+            this.tableLayoutPanelSeeMore.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelSeeMore.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelSeeMore.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelSeeMore.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelSeeMore.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelSeeMore.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelSeeMore.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelSeeMore.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelSeeMore.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelSeeMore.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelSeeMore.Controls.Add(this.panel1, 1, 3);
+            this.tableLayoutPanelSeeMore.Controls.Add(this.label3, 1, 4);
+            this.tableLayoutPanelSeeMore.Controls.Add(this.label2, 3, 1);
+            this.tableLayoutPanelSeeMore.Controls.Add(this.pictureBoxPrevious, 1, 0);
+            this.tableLayoutPanelSeeMore.Controls.Add(this.pictureBox3, 7, 0);
+            this.tableLayoutPanelSeeMore.Controls.Add(this.label5, 1, 6);
+            this.tableLayoutPanelSeeMore.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelSeeMore.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanelSeeMore.Name = "tableLayoutPanelSeeMore";
+            this.tableLayoutPanelSeeMore.RowCount = 10;
+            this.tableLayoutPanelSeeMore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelSeeMore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelSeeMore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelSeeMore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelSeeMore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelSeeMore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelSeeMore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelSeeMore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelSeeMore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelSeeMore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelSeeMore.Size = new System.Drawing.Size(786, 446);
+            this.tableLayoutPanelSeeMore.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.tableLayoutPanelSeeMore.SetColumnSpan(this.panel1, 8);
+            this.panel1.Location = new System.Drawing.Point(81, 152);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(618, 3);
+            this.panel1.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.tableLayoutPanelSeeMore.SetColumnSpan(this.label3, 8);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(81, 176);
+            this.label3.Name = "label3";
+            this.tableLayoutPanelSeeMore.SetRowSpan(this.label3, 2);
+            this.label3.Size = new System.Drawing.Size(618, 88);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Client : Alexis ROLLAND, Enseignant POLYTECH TOURS\r\nRéalisateur : Brice PIQUEUX, " +
+    "Etudiant POLYTECH TOURS";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.tableLayoutPanelSeeMore.SetColumnSpan(this.label2, 4);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(237, 44);
+            this.label2.Name = "label2";
+            this.tableLayoutPanelSeeMore.SetRowSpan(this.label2, 2);
+            this.label2.Size = new System.Drawing.Size(306, 88);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Fortune Machine V3.0 - 2021";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pictureBoxPrevious
             // 
             this.pictureBoxPrevious.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -510,6 +493,23 @@ namespace FortuneMachine
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
             // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.tableLayoutPanelSeeMore.SetColumnSpan(this.label5, 8);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(81, 264);
+            this.label5.Name = "label5";
+            this.tableLayoutPanelSeeMore.SetRowSpan(this.label5, 3);
+            this.label5.Size = new System.Drawing.Size(618, 132);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Cette machine imprime les informations séléctionnées à l\'écran\r\nPour l\'utiliser i" +
+    "nsérer des pièces de 2€, 1€, 0.50€, 0.20€ ou 0.10€\r\n10 centimes = 1 crédit";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // Interface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -524,18 +524,18 @@ namespace FortuneMachine
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Interface_FormClosing);
             this.Load += new System.EventHandler(this.Interface_Load);
             this.tabControlMain.ResumeLayout(false);
-            this.tabPageChoices.ResumeLayout(false);
-            this.tableLayoutPanelChoices.ResumeLayout(false);
-            this.tableLayoutPanelChoices.PerformLayout();
-            this.tabPageSeeMore.ResumeLayout(false);
-            this.tableLayoutPanelSeeMore.ResumeLayout(false);
-            this.tableLayoutPanelSeeMore.PerformLayout();
             this.tabPageWelcome.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tabPageChoices.ResumeLayout(false);
+            this.tableLayoutPanelChoices.ResumeLayout(false);
+            this.tableLayoutPanelChoices.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFortuneTeller)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSeeMore)).EndInit();
+            this.tabPageSeeMore.ResumeLayout(false);
+            this.tableLayoutPanelSeeMore.ResumeLayout(false);
+            this.tableLayoutPanelSeeMore.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrevious)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
