@@ -47,6 +47,9 @@ namespace FortuneMachine
             }
         }
 
+        /// <summary>
+        /// Fonction qui permet de lire sur le port COM
+        /// </summary>
         private void Read()
         {
             string received = "";
@@ -62,6 +65,10 @@ namespace FortuneMachine
             }
         }
 
+        /// <summary>
+        /// Fonction qui permet d'envoyer une trame print formatée pour que la carte d'interfaçage puisse la traiter <PRN:...
+        /// </summary>
+        /// <param name="text">Texte a imprimer</param>
         public void Print(string text)
         {
             char carriageReturn = (char)0x0A;
@@ -70,6 +77,10 @@ namespace FortuneMachine
             Console.WriteLine("Envoyé : " + toSend);
         }
 
+        /// <summary>
+        /// Fonction qui permet d'envoyer une trame pour récupérer la date formatée pour que la carte d'interfaçage puisse la traiter <GDT?
+        /// </summary>
+        /// <returns>Date</returns>
         public DateTime GetDate()
         {
             char carriageReturn = (char)0x0A;
@@ -79,6 +90,10 @@ namespace FortuneMachine
             return new DateTime();
         }
 
+        /// <summary>
+        /// Fonction qui permet d'envoyer une trame pour récupérer la position formatée pour que la carte d'interfaçage puisse la traiter <GPS?
+        /// </summary>
+        /// <returns>Tableau Latitude;Longitude</returns>
         public float[] GetPosition()
         {
             char carriageReturn = (char)0x0A;

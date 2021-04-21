@@ -16,6 +16,10 @@ namespace FortuneMachine
             this.mainInterface = mainInterface;
         }
 
+        /// <summary>
+        /// Fonction temporaire qui permet de récupérer l'IP publique pour géolocaliser l'utilisateur en absence de fonctionnement du GPS
+        /// </summary>
+        /// <returns>IP publique</returns>
         private string GetPublicIP()
         {
             using (WebClient client = new WebClient())
@@ -34,6 +38,9 @@ namespace FortuneMachine
             }
         }
 
+        /// <summary>
+        /// Fonction qui modifie les coordonnées Latitude et Longitude pour géolocaliser l'utilisateur en fonction de la position récupérée avec l'IP publique
+        /// </summary>
         private void GetIPLocation()
         {
             string IP = GetPublicIP();
@@ -47,6 +54,9 @@ namespace FortuneMachine
             mainInterface.Longitude = Convert.ToDouble(longitude);
         }
 
+        /// <summary>
+        /// Fonction qui permet de mettre à jour la position de l'utilisateur
+        /// </summary>
         public void UpdateLocation()
         {
             GetIPLocation();

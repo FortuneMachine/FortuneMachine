@@ -11,6 +11,9 @@ namespace FortuneMachine
         private static string APIKey = "5869606d5c52d5704667c63ee29dd8fbd1469a2a";
         private static string templateQuery = "https://api.waqi.info/feed/geo:@LAT@;@LON@/?token=";
 
+        /// <summary>
+        /// Fonction qui permet de récupérer la clé API en paramètre dans le fichier de config sous le nom MovieAPIKey
+        /// </summary>
         private static void LoadAPIKey()
         {
             if (ConfigurationManager.AppSettings.Get("AirQualityAPIKey") != null)
@@ -19,6 +22,12 @@ namespace FortuneMachine
                 MessageBox.Show("Erreur lors de la récupération de la clé API, celle par défaut sera utilisée (Vérifier le fichier de configuration)", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
+        /// <summary>
+        /// Fonction qui permet de récupérer les datas telles qu'elles sont retournées par le Client Web
+        /// </summary>
+        /// <param name="latitude">Latitude de la position pour obtenir la qualité de l'air</param>
+        /// <param name="longitude">Longitude de la position pour obtenir la qualité de l'air</param>
+        /// <returns>Datas reçues / Error_ + Error Message / Unknown error_ + Error Message</returns>
         private static string GetRawData(double latitude, double longitude)
         {
             string url = templateQuery + APIKey;
@@ -46,6 +55,11 @@ namespace FortuneMachine
             }
         }
 
+        /// <summary>
+        /// Fonction qui permet de donner une indication sur la qualité de l'air en fonction de l'index reçu
+        /// </summary>
+        /// <param name="qualityIndex">index de qualité de l'air</param>
+        /// <returns>Indication sur la qualité de l'air</returns>
         private static string GetQualityByIndex(Single qualityIndex)
         {
             if (qualityIndex < 50)
@@ -62,6 +76,12 @@ namespace FortuneMachine
                 return "Dangereux";
         }
 
+        /// <summary>
+        /// Fonction qui permet de récupérer la qualité de l'air environnante formatée de la sorte : {statut de retour}_{message a afficher}_{message a imprimer}
+        /// </summary>
+        /// <param name="latitude">Latitude de la position pour obtenir la qualité de l'air</param>
+        /// <param name="longitude">Longitude de la position pour obtenir la qualité de l'air</param>
+        /// <returns>String {statut de retour}_{message a afficher}_{message a imprimer}</returns>
         public static string GetCurrentAirQuality(double latitude, double longitude)
         {
             LoadAPIKey();

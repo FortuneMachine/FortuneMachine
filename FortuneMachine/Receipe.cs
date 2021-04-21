@@ -9,6 +9,10 @@ namespace FortuneMachine
 
         private static string url = "https://cuisine-facile.com/rss-news.xml";
 
+        /// <summary>
+        /// Fonction qui permet de récupérer un noeud aléatoire du fichier XML retourné par le flux RSS des recettes du moment
+        /// </summary>
+        /// <returns>Ce qui est dans la balise title sélectionnée aléatoirement</returns>
         private static string GetOneReceipe()
         {
             XmlDocument rssXmlDoc = new XmlDocument();
@@ -19,7 +23,10 @@ namespace FortuneMachine
             return node.InnerText;
         }
 
-
+        /// <summary>
+        /// Fonction qui permet de récupérer une recette aléatoire formatée de la sorte : {statut de retour}_{message a afficher}_{message a imprimer}
+        /// </summary>
+        /// <returns>String {statut de retour}_{message a afficher}_{message a imprimer}</returns>
         public static string GetRandomReceipe()
         {
             string returnStatus = "";

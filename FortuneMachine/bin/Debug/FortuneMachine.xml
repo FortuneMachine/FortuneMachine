@@ -1,0 +1,498 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FortuneMachine</name>
+    </assembly>
+    <members>
+        <member name="M:FortuneMachine.AirQuality.LoadAPIKey">
+            <summary>
+            Fonction qui permet de récupérer la clé API en paramètre dans le fichier de config sous le nom MovieAPIKey
+            </summary>
+        </member>
+        <member name="M:FortuneMachine.AirQuality.GetRawData(System.Double,System.Double)">
+            <summary>
+            Fonction qui permet de récupérer les datas telles qu'elles sont retournées par le Client Web
+            </summary>
+            <param name="latitude">Latitude de la position pour obtenir la qualité de l'air</param>
+            <param name="longitude">Longitude de la position pour obtenir la qualité de l'air</param>
+            <returns>Datas reçues / Error_ + Error Message / Unknown error_ + Error Message</returns>
+        </member>
+        <member name="M:FortuneMachine.AirQuality.GetQualityByIndex(System.Single)">
+            <summary>
+            Fonction qui permet de donner une indication sur la qualité de l'air en fonction de l'index reçu
+            </summary>
+            <param name="qualityIndex">index de qualité de l'air</param>
+            <returns>Indication sur la qualité de l'air</returns>
+        </member>
+        <member name="M:FortuneMachine.AirQuality.GetCurrentAirQuality(System.Double,System.Double)">
+            <summary>
+            Fonction qui permet de récupérer la qualité de l'air environnante formatée de la sorte : {statut de retour}_{message a afficher}_{message a imprimer}
+            </summary>
+            <param name="latitude">Latitude de la position pour obtenir la qualité de l'air</param>
+            <param name="longitude">Longitude de la position pour obtenir la qualité de l'air</param>
+            <returns>String {statut de retour}_{message a afficher}_{message a imprimer}</returns>
+        </member>
+        <member name="M:FortuneMachine.ChuckNorrisFact.GetRawData">
+            <summary>
+            Fonction qui permet de récupérer les datas telles qu'elles sont retournées par le Client Web
+            </summary>
+            <returns>Datas reçues / Error_ + Error Message / Unknown error_ + Error Message</returns>
+        </member>
+        <member name="M:FortuneMachine.ChuckNorrisFact.GetJoke">
+            <summary>
+            Fonction qui permet de récupérer une blague sur Chuck Norris formatée de la sorte : {statut de retour}_{message a afficher}_{message a imprimer}
+            </summary>
+            <returns>String {statut de retour}_{message a afficher}_{message a imprimer}</returns>
+        </member>
+        <member name="M:FortuneMachine.ChuckNorrisFact.EnableExplicit(System.Boolean)">
+            <summary>
+            Fonction qui permet de définir si oui ou non on veut des blagues dites 'explicit' ou non
+            </summary>
+            <param name="enable">True : explicit / False : non explicit</param>
+        </member>
+        <member name="M:FortuneMachine.GPS.GetPublicIP">
+            <summary>
+            Fonction temporaire qui permet de récupérer l'IP publique pour géolocaliser l'utilisateur en absence de fonctionnement du GPS
+            </summary>
+            <returns>IP publique</returns>
+        </member>
+        <member name="M:FortuneMachine.GPS.GetIPLocation">
+            <summary>
+            Fonction qui modifie les coordonnées Latitude et Longitude pour géolocaliser l'utilisateur en fonction de la position récupérée avec l'IP publique
+            </summary>
+        </member>
+        <member name="M:FortuneMachine.GPS.UpdateLocation">
+            <summary>
+            Fonction qui permet de mettre à jour la position de l'utilisateur
+            </summary>
+        </member>
+        <member name="M:FortuneMachine.Horoscope.SelectSymbol">
+            <summary>
+            Fonction qui permet d'afficher la fenêtre de choix du signe astrologique et de retourner celui sélectionné
+            </summary>
+            <returns>Signe astrologique sélectionné</returns>
+        </member>
+        <member name="M:FortuneMachine.Horoscope.GetRSSNodeDescription">
+            <summary>
+            Fonction qui permet de récupérer le noeud Description du flux RSS utilisé pour l'Horoscope, celui-ci comprenenant toutes les informations utiles pour le traitement de la demande
+            </summary>
+            <returns>Tout ce qui est dans le noeud Description du fichier XML retourné</returns>
+        </member>
+        <member name="M:FortuneMachine.Horoscope.GetLovePrediction">
+            <summary>
+            Fonction qui permet de récupérer la partie Amour de l'horoscope formatée de la sorte : {statut de retour}_{message a afficher}_{message a imprimer}
+            </summary>
+            <returns>String {statut de retour}_{message a afficher}_{message a imprimer}</returns>
+        </member>
+        <member name="M:FortuneMachine.Horoscope.GetMoneyPrediction">
+            <summary>
+            Fonction qui permet de récupérer la partie Argent de l'horoscope formatée de la sorte : {statut de retour}_{message a afficher}_{message a imprimer}
+            </summary>
+            <returns>String {statut de retour}_{message a afficher}_{message a imprimer}</returns>
+        </member>
+        <member name="M:FortuneMachine.Horoscope.GetWorkPrediction">
+            <summary>
+            Fonction qui permet de récupérer la partie Travail de l'horoscope formatée de la sorte : {statut de retour}_{message a afficher}_{message a imprimer}
+            </summary>
+            <returns>String {statut de retour}_{message a afficher}_{message a imprimer}</returns>
+        </member>
+        <member name="M:FortuneMachine.Horoscope.GetWinkPrediction">
+            <summary>
+            Fonction qui permet de récupérer la partie Clin d'oeil de l'horoscope formatée de la sorte : {statut de retour}_{message a afficher}_{message a imprimer}
+            </summary>
+            <returns>String {statut de retour}_{message a afficher}_{message a imprimer}</returns>
+        </member>
+        <member name="M:FortuneMachine.Interface.Interface_Load(System.Object,System.EventArgs)">
+            <summary>
+            Fonction appelée au chargement de l'interface graphique
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FortuneMachine.Interface.HideTabControlHeaders">
+            <summary>
+            Fonction permettant de cacher les onglets du TabControl utilisé pour naviguer entre les différentes pages
+            </summary>
+        </member>
+        <member name="M:FortuneMachine.Interface.buttonWeather_Click(System.Object,System.EventArgs)">
+            <summary>
+            Fonction appelée lors du clic sur le bouton Météo
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FortuneMachine.Interface.buttonChucNorrisFact_Click(System.Object,System.EventArgs)">
+            <summary>
+            Fonction appelée lors du clic sur le bouton Chuck Norris
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FortuneMachine.Interface.buttonAirQuality_Click(System.Object,System.EventArgs)">
+            <summary>
+            Fonction appelée lors du clic sur le bouton qualité de l'air
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FortuneMachine.Interface.buttonMovie_Click(System.Object,System.EventArgs)">
+            <summary>
+            Fonction appelée lors du clic sur le bouton Film aléatoire
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FortuneMachine.Interface.buttonReceipe_Click(System.Object,System.EventArgs)">
+            <summary>
+            Fonction appelée lors du clic sur le bouton Recette aléatoire
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FortuneMachine.Interface.buttonAstroWink_Click(System.Object,System.EventArgs)">
+            <summary>
+            Fonction appelée lors du clic sur le bouton Horoscope
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FortuneMachine.Interface.TryPrintAnswer(System.String)">
+            <summary>
+            Fonction qui permet de formater le message de retour lors de la recherche d'information. Permet d'afficher les informations si elles ont bien été obtenues ou le message d'erreur adapté sinon.
+            </summary>
+            <param name="answer"></param>
+            <returns>True : Informations correctement récupérées / False : Message d'erreur récupéré</returns>
+        </member>
+        <member name="M:FortuneMachine.Interface.CheckSufficientCredits(System.Int32)">
+            <summary>
+            Fonction qui permet de vérifier que l'utilisateur dispose de suffisamment de crédits pour obtenir l'information qu'il cherche à acquérir
+            </summary>
+            <param name="price">Prix de l'information que l'utilisateur cherche à acquérir (en crédits)</param>
+            <returns>True : Crédits suffisants / False : Crédits insuffisants</returns>
+        </member>
+        <member name="M:FortuneMachine.Interface.AddCredits(System.Int32)">
+            <summary>
+            Fonction qui permet d'ajouter des crédits à la balance
+            </summary>
+            <param name="creditsToAdd">Nombre de crédits à ajouter à la balance</param>
+        </member>
+        <member name="M:FortuneMachine.Interface.RemoveCredits(System.Int32)">
+            <summary>
+            Fonction qui permet de retirer des crédits de la balance
+            </summary>
+            <param name="price">Nombre de crédits à retirer de la balance</param>
+        </member>
+        <member name="M:FortuneMachine.Interface.UpdateCreditsDisplay">
+            <summary>
+            Fonction qui permet de mettre à jour les crédits restants sur l'interface graphique
+            </summary>
+        </member>
+        <member name="M:FortuneMachine.Interface.ShowWelcomePage">
+            <summary>
+            Fonction qui permet de d'afficher la page d'accueil
+            </summary>
+        </member>
+        <member name="M:FortuneMachine.Interface.ShowChoicesPage">
+            <summary>
+            Fonction qui permet d'afficher la page des choix
+            </summary>
+        </member>
+        <member name="M:FortuneMachine.Interface.ShowSeeMorePage">
+            <summary>
+            Fonction qui permet d'afficher la page a propos
+            </summary>
+        </member>
+        <member name="M:FortuneMachine.Interface.LoadConfig">
+            <summary>
+            Fonction qui permet de charger les paramètres en fonction des valeurs récupérées dans le fichier de configuration
+            </summary>
+        </member>
+        <member name="M:FortuneMachine.Interface.SaveCredits">
+            <summary>
+            Fonction qui permet de sauvegarder le nombre de crédits restants dans le fichier de configuration pour le prochain lancement éventuellement
+            </summary>
+        </member>
+        <member name="M:FortuneMachine.Interface.Interface_FormClosing(System.Object,System.Windows.Forms.FormClosingEventArgs)">
+            <summary>
+            Fonction appelée lors de la fermeture de l'interface graphique
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FortuneMachine.Interface.labelCredits_Click(System.Object,System.EventArgs)">
+            <summary>
+            Fonction temporaire qui permet d'ajouter des crédits lors d'un clic sur le nombre de crédits dans la page de choix
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FortuneMachine.Interface.labelWelcome_Click(System.Object,System.EventArgs)">
+            <summary>
+             Fonction temporaire qui permet de passer à la page de choix lors d'un clic sur le message de bienvenue 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FortuneMachine.Interface.pictureBoxSeeMore_Click(System.Object,System.EventArgs)">
+            <summary>
+            Fonction qui permet d'afficher la page a propos lors d'un clic sur l'icone "?"
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FortuneMachine.Interface.pictureBoxPrevious_Click(System.Object,System.EventArgs)">
+            <summary>
+            Fonction qui permet d'afficher la page attendue lors d'un clic sur le bouton de retour
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:FortuneMachine.Interface.components">
+            <summary>
+            Variable nécessaire au concepteur.
+            </summary>
+        </member>
+        <member name="M:FortuneMachine.Interface.Dispose(System.Boolean)">
+            <summary>
+            Nettoyage des ressources utilisées.
+            </summary>
+            <param name="disposing">true si les ressources managées doivent être supprimées ; sinon, false.</param>
+        </member>
+        <member name="M:FortuneMachine.Interface.InitializeComponent">
+            <summary>
+            Méthode requise pour la prise en charge du concepteur - ne modifiez pas
+            le contenu de cette méthode avec l'éditeur de code.
+            </summary>
+        </member>
+        <member name="M:FortuneMachine.Movie.LoadAPIKey">
+            <summary>
+            Fonction qui permet de récupérer la clé API en paramètre dans le fichier de config sous le nom MovieAPIKey
+            </summary>
+        </member>
+        <member name="M:FortuneMachine.Movie.GetRawData">
+            <summary>
+            Fonction qui permet de récupérer les datas telles qu'elles sont retournées par le Client Web
+            </summary>
+            <returns>Datas reçues / Error_ + Error Message / Unknown error_ + Error Message</returns>
+        </member>
+        <member name="M:FortuneMachine.Movie.GetRandomMovie">
+            <summary>
+            Fonction qui permet de récupérer un titre de film aléatoire formaté de la sorte : {statut de retour}_{message a afficher}_{message a imprimer}
+            </summary>
+            <returns>String {statut de retour}_{message a afficher}_{message a imprimer}</returns>
+        </member>
+        <member name="M:FortuneMachine.Program.Main">
+            <summary>
+            Point d'entrée principal de l'application.
+            </summary>
+        </member>
+        <member name="M:FortuneMachine.Receipe.GetOneReceipe">
+            <summary>
+            Fonction qui permet de récupérer un noeud aléatoire du fichier XML retourné par le flux RSS des recettes du moment
+            </summary>
+            <returns>Ce qui est dans la balise title sélectionnée aléatoirement</returns>
+        </member>
+        <member name="M:FortuneMachine.Receipe.GetRandomReceipe">
+            <summary>
+            Fonction qui permet de récupérer une recette aléatoire formatée de la sorte : {statut de retour}_{message a afficher}_{message a imprimer}
+            </summary>
+            <returns>String {statut de retour}_{message a afficher}_{message a imprimer}</returns>
+        </member>
+        <member name="F:FortuneMachine.SelectionForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:FortuneMachine.SelectionForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:FortuneMachine.SelectionForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:FortuneMachine.SerialCommunication.Read">
+            <summary>
+            Fonction qui permet de lire sur le port COM
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:FortuneMachine.SerialCommunication.Print(System.String)" -->
+        <!-- Badly formed XML comment ignored for member "M:FortuneMachine.SerialCommunication.GetDate" -->
+        <!-- Badly formed XML comment ignored for member "M:FortuneMachine.SerialCommunication.GetPosition" -->
+        <member name="M:FortuneMachine.Weather.LoadAPIKey">
+            <summary>
+            Fonction qui permet de récupérer la clé API en paramètre dans le fichier de config sous le nom MovieAPIKey
+            </summary>
+        </member>
+        <member name="M:FortuneMachine.Weather.GetRawData(System.Double,System.Double)">
+            <summary>
+            Fonction qui permet de récupérer les datas telles qu'elles sont retournées par le Client Web
+            </summary>
+            <param name="latitude">Latitude de la position pour obtenir la météo</param>
+            <param name="longitude">Longitude de la position pour obtenir la météo</param>
+            <returns>Datas reçues / Error_ + Error Message / Unknown error_ + Error Message</returns>
+        </member>
+        <member name="M:FortuneMachine.Weather.UnixTimeStampToDateTime(System.Double)">
+            <summary>
+            Fonction qui permet de transformer un TimeStamp en une date utilisé pour convertir le TimeStamp de la réponse json
+            </summary>
+            <param name="unixTimeStamp">TimeStamp unix à convertir en date</param>
+            <returns>Date</returns>
+        </member>
+        <member name="M:FortuneMachine.Weather.GetOneDayResults(System.Object)">
+            <summary>
+            Foonction qui permet de récupérer les résultats météorologiques d'un jour en parsant un noeud du fichier json retourné
+            </summary>
+            <param name="node">Noeud à parser</param>
+            <returns>Valeurs pour le jour parsé</returns>
+        </member>
+        <member name="M:FortuneMachine.Weather.GetWeatherForecast(System.Double,System.Double)">
+            <summary>
+            Fonction qui permet de récupérer les prévisions météo formatées de la sorte : {statut de retour}_{message a afficher}_{message a imprimer}
+            </summary>
+            <param name="latitude">Latitude de la position pour obtenir la météo</param>
+            <param name="longitude">Longitude de la position pour obtenir la météo</param>
+            <returns>String {statut de retour}_{message a afficher}_{message a imprimer}</returns>
+        </member>
+        <member name="T:FortuneMachine.Properties.Resources">
+            <summary>
+              Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
+            </summary>
+        </member>
+        <member name="P:FortuneMachine.Properties.Resources.ResourceManager">
+            <summary>
+              Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
+            </summary>
+        </member>
+        <member name="P:FortuneMachine.Properties.Resources.Culture">
+            <summary>
+              Remplace la propriété CurrentUICulture du thread actuel pour toutes
+              les recherches de ressources à l'aide de cette classe de ressource fortement typée.
+            </summary>
+        </member>
+        <member name="P:FortuneMachine.Properties.Resources.air_quality">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FortuneMachine.Properties.Resources.astrology">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FortuneMachine.Properties.Resources.background_stretch">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FortuneMachine.Properties.Resources.Balance">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FortuneMachine.Properties.Resources.Belier">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FortuneMachine.Properties.Resources.Cancer">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FortuneMachine.Properties.Resources.Capricorne">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FortuneMachine.Properties.Resources.chuck_norris">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FortuneMachine.Properties.Resources.coins">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FortuneMachine.Properties.Resources.cooking">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FortuneMachine.Properties.Resources.fortuner_teller">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FortuneMachine.Properties.Resources.Gemeaux">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FortuneMachine.Properties.Resources.Lion">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FortuneMachine.Properties.Resources.logo_polytech">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FortuneMachine.Properties.Resources.multimedia">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FortuneMachine.Properties.Resources.Poisson">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FortuneMachine.Properties.Resources.previous">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FortuneMachine.Properties.Resources.question">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FortuneMachine.Properties.Resources.Sagittaire">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FortuneMachine.Properties.Resources.Scorpion">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FortuneMachine.Properties.Resources.Taureau">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FortuneMachine.Properties.Resources.Verseau">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FortuneMachine.Properties.Resources.Vierge">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:FortuneMachine.Properties.Resources.weather">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Bitmap.
+            </summary>
+        </member>
+    </members>
+</doc>

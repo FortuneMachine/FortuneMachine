@@ -13,6 +13,10 @@ namespace FortuneMachine
         private static string templateQuery = "http://api.icndb.com/jokes/random";
         private static Boolean explicitContent = true;
 
+        /// <summary>
+        /// Fonction qui permet de récupérer les datas telles qu'elles sont retournées par le Client Web
+        /// </summary>
+        /// <returns>Datas reçues / Error_ + Error Message / Unknown error_ + Error Message</returns>
         private static string GetRawData()
         {
             string result = "";
@@ -42,6 +46,10 @@ namespace FortuneMachine
             }
         }
 
+        /// <summary>
+        /// Fonction qui permet de récupérer une blague sur Chuck Norris formatée de la sorte : {statut de retour}_{message a afficher}_{message a imprimer}
+        /// </summary>
+        /// <returns>String {statut de retour}_{message a afficher}_{message a imprimer}</returns>
         public static string GetJoke()
         {
             string returnStatus = "";
@@ -75,7 +83,10 @@ namespace FortuneMachine
             return String.Format("{0}_{1}_{2}", returnStatus, messageToShow, messageToPrint);
         }
 
-        // TODO : Mettre en paramètre
+        /// <summary>
+        /// Fonction qui permet de définir si oui ou non on veut des blagues dites 'explicit' ou non
+        /// </summary>
+        /// <param name="enable">True : explicit / False : non explicit</param>
         public static void EnableExplicit(bool enable)
         {
             explicitContent = enable;

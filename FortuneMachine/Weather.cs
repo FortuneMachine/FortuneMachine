@@ -11,6 +11,9 @@ namespace FortuneMachine
         private static string APIKey = "48b4c911b4eb888cc5f3b6c7f4484777";
         private static string templateQuery = "https://api.openweathermap.org/data/2.5/onecall?lat=@LAT@&lon=@LON@&exclude=current,minutely,hourly,alerts&units=metric&lang=fr&appid=";
 
+        /// <summary>
+        /// Fonction qui permet de récupérer la clé API en paramètre dans le fichier de config sous le nom MovieAPIKey
+        /// </summary>
         private static void LoadAPIKey()
         {
             if (ConfigurationManager.AppSettings.Get("WeatherAPIKey") != null)
@@ -19,6 +22,12 @@ namespace FortuneMachine
                 MessageBox.Show("Erreur lors de la récupération de la clé API, celle par défaut sera utilisée (Vérifier le fichier de configuration)", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
+        /// <summary>
+        /// Fonction qui permet de récupérer les datas telles qu'elles sont retournées par le Client Web
+        /// </summary>
+        /// <param name="latitude">Latitude de la position pour obtenir la météo</param>
+        /// <param name="longitude">Longitude de la position pour obtenir la météo</param>
+        /// <returns>Datas reçues / Error_ + Error Message / Unknown error_ + Error Message</returns>
         private static string GetRawData(double latitude, double longitude)
         {
             string url = templateQuery + APIKey;
@@ -46,6 +55,11 @@ namespace FortuneMachine
             }
         }
 
+        /// <summary>
+        /// Fonction qui permet de transformer un TimeStamp en une date utilisé pour convertir le TimeStamp de la réponse json
+        /// </summary>
+        /// <param name="unixTimeStamp">TimeStamp unix à convertir en date</param>
+        /// <returns>Date</returns>
         private static DateTime UnixTimeStampToDateTime(double unixTimeStamp)
         {
             // Unix timestamp is seconds past epoch
@@ -54,6 +68,11 @@ namespace FortuneMachine
             return dtDateTime;
         }
 
+        /// <summary>
+        /// Foonction qui permet de récupérer les résultats météorologiques d'un jour en parsant un noeud du fichier json retourné
+        /// </summary>
+        /// <param name="node">Noeud à parser</param>
+        /// <returns>Valeurs pour le jour parsé</returns>
         private static string GetOneDayResults(dynamic node)
         {
             string formattedValues = "";
@@ -69,6 +88,12 @@ namespace FortuneMachine
             return formattedValues;
         }
 
+        /// <summary>
+        /// Fonction qui permet de récupérer les prévisions météo formatées de la sorte : {statut de retour}_{message a afficher}_{message a imprimer}
+        /// </summary>
+        /// <param name="latitude">Latitude de la position pour obtenir la météo</param>
+        /// <param name="longitude">Longitude de la position pour obtenir la météo</param>
+        /// <returns>String {statut de retour}_{message a afficher}_{message a imprimer}</returns>
         public static string GetWeatherForecast(double latitude, double longitude)
         {
             LoadAPIKey();

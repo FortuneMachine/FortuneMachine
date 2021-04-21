@@ -9,6 +9,10 @@ namespace FortuneMachine
 
         private static string templateQuery = "https://www.asiaflash.com/horoscope/rss_horojour_@SYMBOL@.xml";
 
+        /// <summary>
+        /// Fonction qui permet d'afficher la fenêtre de choix du signe astrologique et de retourner celui sélectionné
+        /// </summary>
+        /// <returns>Signe astrologique sélectionné</returns>
         public static string SelectSymbol()
         {
             using(var form = new SelectionForm())
@@ -25,6 +29,10 @@ namespace FortuneMachine
             }
         }
 
+        /// <summary>
+        /// Fonction qui permet de récupérer le noeud Description du flux RSS utilisé pour l'Horoscope, celui-ci comprenenant toutes les informations utiles pour le traitement de la demande
+        /// </summary>
+        /// <returns>Tout ce qui est dans le noeud Description du fichier XML retourné</returns>
         private static string GetRSSNodeDescription()
         {
             string url = templateQuery.Replace("@SYMBOL@", SelectSymbol());
@@ -35,7 +43,10 @@ namespace FortuneMachine
             return rssNode.InnerText;
         }
 
-        
+        /// <summary>
+        /// Fonction qui permet de récupérer la partie Amour de l'horoscope formatée de la sorte : {statut de retour}_{message a afficher}_{message a imprimer}
+        /// </summary>
+        /// <returns>String {statut de retour}_{message a afficher}_{message a imprimer}</returns>
         public static string GetLovePrediction()
         {
             string returnStatus = "";
@@ -73,6 +84,10 @@ namespace FortuneMachine
             return String.Format("{0}_{1}_{2}", returnStatus, messageToShow, messageToPrint);
         }
 
+        /// <summary>
+        /// Fonction qui permet de récupérer la partie Argent de l'horoscope formatée de la sorte : {statut de retour}_{message a afficher}_{message a imprimer}
+        /// </summary>
+        /// <returns>String {statut de retour}_{message a afficher}_{message a imprimer}</returns>
         public static string GetMoneyPrediction()
         {
             string returnStatus = "";
@@ -110,6 +125,10 @@ namespace FortuneMachine
             return String.Format("{0}_{1}_{2}", returnStatus, messageToShow, messageToPrint);
         }
 
+        /// <summary>
+        /// Fonction qui permet de récupérer la partie Travail de l'horoscope formatée de la sorte : {statut de retour}_{message a afficher}_{message a imprimer}
+        /// </summary>
+        /// <returns>String {statut de retour}_{message a afficher}_{message a imprimer}</returns>
         public static string GetWorkPrediction()
         {
             string returnStatus = "";
@@ -147,6 +166,10 @@ namespace FortuneMachine
             return String.Format("{0}_{1}_{2}", returnStatus, messageToShow, messageToPrint);
         }
 
+        /// <summary>
+        /// Fonction qui permet de récupérer la partie Clin d'oeil de l'horoscope formatée de la sorte : {statut de retour}_{message a afficher}_{message a imprimer}
+        /// </summary>
+        /// <returns>String {statut de retour}_{message a afficher}_{message a imprimer}</returns>
         public static string GetWinkPrediction()
         {
             string returnStatus = "";

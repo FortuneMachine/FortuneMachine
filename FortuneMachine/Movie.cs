@@ -11,6 +11,9 @@ namespace FortuneMachine
         private static string APIKey = "d092d7787fe120f6afb97ee96c9481d5";
         private static string templateQuery = "https://api.themoviedb.org/3/trending/movie/day?api_key=@API_KEY@&language=fr-FR";
 
+        /// <summary>
+        /// Fonction qui permet de récupérer la clé API en paramètre dans le fichier de config sous le nom MovieAPIKey
+        /// </summary>
         private static void LoadAPIKey()
         {
             if (ConfigurationManager.AppSettings.Get("MovieAPIKey") != null)
@@ -19,6 +22,10 @@ namespace FortuneMachine
                 MessageBox.Show("Erreur lors de la récupération de la clé API, celle par défaut sera utilisée (Vérifier le fichier de configuration)", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
+        /// <summary>
+        /// Fonction qui permet de récupérer les datas telles qu'elles sont retournées par le Client Web
+        /// </summary>
+        /// <returns>Datas reçues / Error_ + Error Message / Unknown error_ + Error Message</returns>
         private static string GetRawData()
         {
             string url = templateQuery.Replace("@API_KEY@",APIKey);
@@ -44,6 +51,10 @@ namespace FortuneMachine
             }
         }
 
+        /// <summary>
+        /// Fonction qui permet de récupérer un titre de film aléatoire formaté de la sorte : {statut de retour}_{message a afficher}_{message a imprimer}
+        /// </summary>
+        /// <returns>String {statut de retour}_{message a afficher}_{message a imprimer}</returns>
         public static string GetRandomMovie()
         {
             LoadAPIKey();
